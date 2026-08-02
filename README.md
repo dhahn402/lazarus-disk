@@ -77,3 +77,25 @@ MIT — see [LICENSE](LICENSE).
 
 Pop!\_OS is a trademark of System76, Inc. This project is independent and is
 not affiliated with or endorsed by System76.
+
+---
+
+## `qr/`
+
+QR codes pointing at the live site, all verified by decoding them back to
+`https://dhahn402.github.io/lazarus-disk/`.
+
+| File | Use |
+| --- | --- |
+| `lazarus-qr-print.png` | Print master. 1800×1800, black on white — highest scan reliability. |
+| `lazarus-qr.svg` | Vector. Scales to any size without softening; give this to a print shop. |
+| `lazarus-qr-brand.png` | Site colors (`#14181A` on `#EDEFEE`) for on-brand material. |
+| `lazarus-qr-transparent.png` | Transparent background, for placing on a dark layout. |
+
+Encoded at error-correction level H, so roughly 30% of the code can be
+obscured or worn and it still resolves.
+
+**Minimum print size: 1 inch / 25 mm square.** Testing showed reliable
+decoding down to 150 px and failure at 100 px, so 1 inch at 300 DPI leaves
+real margin for bad lighting and cheap phone cameras. Always leave the white
+border — that quiet zone is part of the code, not padding.
