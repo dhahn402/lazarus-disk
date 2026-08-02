@@ -8,7 +8,9 @@ clutter. Wiping it and installing Linux makes most of those machines pleasant
 to use again. This repository holds the two things needed to do that as a
 service: a safe USB-writing script, and the website that sells the work.
 
-Built for [Hahn Technologies Corp](https://github.com/dhahn402) in New Bern, NC.
+**Live site: https://dhahn402.github.io/lazarus-disk/**
+
+Built for Hahn Technologies Corp in New Bern, NC.
 
 ---
 
@@ -54,7 +56,7 @@ setting. The stick is for PCs. For a Mac, hold the power button for Recovery.
 
 ---
 
-## `site/index.html`
+## `docs/index.html`
 
 A single-file landing page for the refresh service. No build step, no
 dependencies, no external requests — open it in a browser or drop it on any
