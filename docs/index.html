@@ -3,8 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Computer refresh service in New Bern, NC. Old laptops made fast again, with AI tools matched honestly to what your hardware can run. Hahn Technologies Corp.">
-<title>Second Life Computers — Hahn Technologies Corp</title>
+<link rel="canonical" href="https://newberncomputerrepair.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://newberncomputerrepair.com/">
+<meta property="og:site_name" content="Hahn Technologies Corp">
+<meta property="og:title" content="Computer Repair in New Bern, NC">
+<meta property="og:description" content="Slow laptop? I make old computers fast again — files backed up first, flat price agreed before I start. New Bern and Craven County. Text (252) 253-9629.">
+<meta name="geo.region" content="US-NC">
+<meta name="geo.placename" content="New Bern">
+<meta name="description" content="Computer repair in New Bern and Craven County, NC. Slow laptops made fast again, files backed up first, flat rates from $79. House calls or drop-off. Text (252) 253-9629.">
+<title>Computer Repair in New Bern, NC | Hahn Technologies Corp</title>
 <style>
   :root {
     --ground:      #EDEFEE;
@@ -14,9 +22,11 @@
     --edge-soft:   #DDE2DF;
     --text:        #1B2022;
     --text-2:      #4C5658;
-    --text-3:      #6E797B;
-    --accent:      #A8690F;
+    --text-3:      #596365;
+    --accent:      #8A5406;
     --accent-lit:  #E09A2B;
+    --accent-deep: #6F4304;
+    --edge-control: #848A88;
     --accent-wash: rgba(224,154,43,0.12);
     --beige:       #B3A688;
     --ok:          #2F7355;
@@ -40,9 +50,11 @@
       --edge-soft:   #262D30;
       --text:        #E8EAE8;
       --text-2:      #A9B3B3;
-      --text-3:      #7E8988;
+      --text-3:      #949E9E;
       --accent:      #E09A2B;
       --accent-lit:  #F0B658;
+    --accent-deep: #F0B658;
+    --edge-control: #646E71;
       --accent-wash: rgba(224,154,43,0.10);
       --beige:       #C9BFA8;
       --ok:          #63B48D;
@@ -59,9 +71,11 @@
     --edge-soft:   #262D30;
     --text:        #E8EAE8;
     --text-2:      #A9B3B3;
-    --text-3:      #7E8988;
+    --text-3:      #949E9E;
     --accent:      #E09A2B;
     --accent-lit:  #F0B658;
+    --accent-deep: #F0B658;
+    --edge-control: #646E71;
     --accent-wash: rgba(224,154,43,0.10);
     --beige:       #C9BFA8;
     --ok:          #63B48D;
@@ -77,9 +91,11 @@
     --edge-soft:   #DDE2DF;
     --text:        #1B2022;
     --text-2:      #4C5658;
-    --text-3:      #6E797B;
-    --accent:      #A8690F;
+    --text-3:      #596365;
+    --accent:      #8A5406;
     --accent-lit:  #E09A2B;
+    --accent-deep: #6F4304;
+    --edge-control: #848A88;
     --accent-wash: rgba(224,154,43,0.12);
     --beige:       #B3A688;
     --ok:          #2F7355;
@@ -116,7 +132,7 @@
 
   .u-label {
     font-family: var(--font-mono);
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     letter-spacing: 0.13em;
     text-transform: uppercase;
     color: var(--text-3);
@@ -128,7 +144,7 @@
   a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
 
   :focus-visible {
-    outline: 2px solid var(--accent-lit);
+    outline: 3px solid var(--text);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -165,7 +181,7 @@
   }
   .masthead__meta {
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--text-3);
@@ -220,11 +236,11 @@
     color: var(--ground);
     border-color: var(--accent);
   }
-  .btn--go:hover { transform: translateY(-1px); background: var(--accent-lit); border-color: var(--accent-lit); }
+  .btn--go:hover { transform: translateY(-1px); background: var(--accent-deep); border-color: var(--accent-deep); }
   .btn--quiet {
     background: transparent;
     color: var(--text);
-    border-color: var(--edge);
+    border-color: var(--edge-control);
   }
   .btn--quiet:hover { transform: translateY(-1px); border-color: var(--accent); }
 
@@ -255,12 +271,15 @@
   .opt {
     font-family: var(--font-mono);
     font-size: 0.8125rem;
-    padding: 0.5rem 0.85rem;
-    border: 1px solid var(--edge);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--edge-control);
     border-radius: 3px;
     background: transparent;
     color: var(--text-2);
     cursor: pointer;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
     transition: border-color 0.14s ease, color 0.14s ease, background 0.14s ease;
   }
   .opt:hover { border-color: var(--accent); color: var(--text); }
@@ -285,7 +304,7 @@
 
   .verdict__flag {
     font-family: var(--font-mono);
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     letter-spacing: 0.13em;
     text-transform: uppercase;
     color: var(--text-3);
@@ -319,7 +338,7 @@
   }
   .spec__key {
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     letter-spacing: 0.09em;
     text-transform: uppercase;
     color: var(--text-3);
@@ -413,6 +432,26 @@
     color: var(--no); font-size: 1.05rem;
   }
 
+  /* what I fix — plain two-column list, no card chrome */
+  .fixes { display: grid; gap: 0 2.5rem; grid-template-columns: 1fr; }
+  @media (min-width: 44rem) { .fixes { grid-template-columns: 1fr 1fr; } }
+  .fix { padding-block: 1.05rem; border-bottom: 1px solid var(--edge-soft); }
+  .fix h3 { font-size: 1rem; margin-bottom: 0.3rem; }
+  .fix p { font-size: 0.9375rem; color: var(--text-2); max-width: none; }
+
+  /* Phone-only sticky text bar. This audience is mostly on a phone and the
+     page is long; without it a persuaded reader has to scroll back to act. */
+  .sticky-cta { display: none; }
+  @media (max-width: 46rem) {
+    .sticky-cta {
+      display: block;
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+      border-radius: 0; text-align: center; padding: 0.95rem;
+      box-shadow: 0 -2px 14px rgba(0,0,0,0.18);
+    }
+    footer { padding-bottom: 5rem; }
+  }
+
   /* supporting note under a card grid */
   .note {
     margin-top: 1.5rem;
@@ -446,7 +485,7 @@
   .tier__tag {
     align-self: flex-start;
     font-family: var(--font-mono);
-    font-size: 0.625rem;
+    font-size: 0.6875rem;
     letter-spacing: 0.13em;
     text-transform: uppercase;
     color: var(--accent);
@@ -463,7 +502,8 @@
   }
 
   /* steps — a real sequence, so numbering carries meaning */
-  .steps { display: flex; flex-direction: column; border-top: 1px solid var(--edge-soft); counter-reset: step; }
+  .steps { display: flex; flex-direction: column; border-top: 1px solid var(--edge-soft);
+           counter-reset: step; list-style: none; margin: 0; padding: 0; }
   .step {
     display: grid; grid-template-columns: 2.5rem 1fr;
     gap: 0 1.25rem;
@@ -505,6 +545,9 @@
   .card-contact dd { margin: 0; font-size: 1.0625rem; }
   .card-contact dd a { font-weight: 600; }
 
+  .contact__grid > * { min-width: 0; }
+  .card-contact dd, .card-contact dd a, footer a { overflow-wrap: anywhere; }
+
   footer {
     border-top: 1px solid var(--edge-soft);
     padding-block: 1.75rem 2.5rem;
@@ -514,18 +557,61 @@
   footer p { max-width: none; }
 
   /* load motion */
-  .rise { opacity: 0; transform: translateY(10px); animation: rise 0.55s cubic-bezier(0.2,0.7,0.3,1) forwards; }
+  .rise { transform: translateY(10px); animation: rise 0.55s cubic-bezier(0.2,0.7,0.3,1) forwards; }
   .rise:nth-child(1) { animation-delay: 0.04s; }
   .rise:nth-child(2) { animation-delay: 0.11s; }
   .rise:nth-child(3) { animation-delay: 0.18s; }
   .rise:nth-child(4) { animation-delay: 0.25s; }
-  @keyframes rise { to { opacity: 1; transform: none; } }
+  @keyframes rise { to { transform: none; } }
 
   @media (prefers-reduced-motion: reduce) {
-    .rise { animation: none; opacity: 1; transform: none; }
+    .rise { animation: none; transform: none; }
     * { transition: none !important; }
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://newberncomputerrepair.com/#business",
+  "name": "Hahn Technologies Corp",
+  "description": "Computer repair, tune-ups and full refreshes in New Bern, NC and Craven County. Slow laptops made fast again, files backed up first, flat rates quoted before any work starts. House calls and drop-off.",
+  "url": "https://newberncomputerrepair.com/",
+  "telephone": "+1-252-253-9629",
+  "email": "hahntechnologiescorp@gmail.com",
+  "priceRange": "$79-$149",
+  "founder": { "@type": "Person", "name": "David Hahn" },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "New Bern",
+    "addressRegion": "NC",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Craven County, North Carolina" },
+    { "@type": "City", "name": "New Bern" },
+    { "@type": "City", "name": "Trent Woods" },
+    { "@type": "City", "name": "River Bend" },
+    { "@type": "City", "name": "Bridgeton" },
+    { "@type": "City", "name": "James City" },
+    { "@type": "City", "name": "Havelock" },
+    { "@type": "City", "name": "Vanceboro" },
+    { "@type": "City", "name": "Cove City" }
+  ],
+  "knowsAbout": [
+    "Computer repair",
+    "Laptop repair",
+    "Slow computer troubleshooting",
+    "Windows tune-up and cleanup",
+    "Solid-state drive upgrades",
+    "Memory upgrades",
+    "Data backup and file transfer",
+    "Linux installation",
+    "Pop!_OS",
+    "Local AI assistant setup"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -533,7 +619,7 @@
 <header class="masthead">
   <div class="wrap masthead__inner">
     <div class="wordmark"><span class="led"></span>Hahn Technologies Corp</div>
-    <div class="masthead__meta">New Bern, NC &middot; House calls &amp; drop-off</div>
+    <div class="masthead__meta">Computer repair &middot; New Bern &amp; Craven County &middot; <a href="sms:+12522539629?&amp;body=Hi%20David%20-%20my%20computer%20">Text (252) 253-9629</a></div>
   </div>
 </header>
 
@@ -542,39 +628,104 @@
   <section class="hero">
     <div class="wrap hero__grid">
       <div class="hero__lede">
-        <p class="u-label rise">Computer refresh service</p>
-        <h1 class="rise">That slow old laptop probably isn’t <em>dead</em>. It’s just full.</h1>
-        <p class="hero__sub rise">I take computers people have given up on — the ones that take four minutes to
-          open a browser — and turn them back into machines that feel quick. Then I set up the AI tools
-          your hardware can genuinely handle, and I tell you plainly when it can’t handle much.</p>
+        <p class="u-label rise">Computer repair &amp; refresh &middot; New Bern, NC</p>
+        <h1 class="rise">Slow computer? It probably isn’t <em>dead</em>. It’s just full.</h1>
+        <p class="hero__sub rise">I’m David. I fix computers people have given up on — the ones that take four
+          minutes to open a browser. Sometimes that’s a tune-up and you keep Windows. Sometimes the machine is
+          better off on a fresh system. Either way your photos, files and email come with you, and you get a
+          flat price before I start.</p>
         <div class="cta-row rise">
-          <a class="btn btn--go" href="sms:+12522539629">Text me about your computer</a>
+          <a class="btn btn--go" href="sms:+12522539629?&amp;body=Hi%20David%20-%20my%20computer%20is%20">Text me: (252) 253-9629</a>
           <a class="btn btn--quiet" href="#pricing">See what it costs</a>
         </div>
+        <p class="rise" style="font-size:0.9375rem;color:var(--text-2);">One sentence is enough &mdash;
+          &ldquo;it takes forever to start up&rdquo; tells me plenty. Weekdays you’ll hear back the same day.
+          And if I look at your machine and don’t think I can make it meaningfully better, I’ll say so and
+          charge you nothing for looking.</p>
       </div>
 
       <div class="checker rise">
         <div class="checker__head">
           <p class="u-label">Straight answer, before you pay anything</p>
-          <div class="checker__title">Can your computer actually run AI?</div>
+          <h2 class="checker__title">Can your computer actually run AI?</h2>
         </div>
         <div class="checker__body">
           <p class="u-label" id="ram-label">How much memory (RAM) does it have?</p>
           <div class="opts" role="group" aria-labelledby="ram-label">
+            <button class="opt" type="button" data-ram="0" aria-pressed="true">I don’t know</button>
             <button class="opt" type="button" data-ram="4" aria-pressed="false">4 GB or less</button>
-            <button class="opt" type="button" data-ram="8" aria-pressed="true">8 GB</button>
+            <button class="opt" type="button" data-ram="8" aria-pressed="false">8 GB</button>
             <button class="opt" type="button" data-ram="16" aria-pressed="false">16 GB</button>
             <button class="opt" type="button" data-ram="32" aria-pressed="false">32 GB+</button>
-            <button class="opt" type="button" data-ram="0" aria-pressed="false">No idea</button>
+            
           </div>
-          <div class="verdict" id="verdict" data-tone="some" aria-live="polite">
-            <div class="verdict__flag" id="v-flag">Yes, within limits</div>
-            <div class="verdict__head" id="v-head">Small AI models, running privately on your machine</div>
-            <div class="verdict__text" id="v-text">8 GB comfortably runs a 3-billion-parameter assistant offline —
-              good for drafting emails, summarizing documents and answering questions. It thinks at roughly reading
-              speed rather than instantly, because it uses your processor, not a graphics card. For anything heavier,
-              I’ll set you up with the free web tools instead.</div>
+          <div class="verdict" id="verdict" data-tone="some" role="status" aria-live="polite" aria-atomic="true">
+            <div class="verdict__flag" id="v-flag">Easy to find out</div>
+            <div class="verdict__head" id="v-head">Don’t know? That’s the normal answer</div>
+            <div class="verdict__text" id="v-text">Almost nobody knows their memory off the top of their head.
+              Text me the make and model — it’s on a sticker underneath the laptop — and I’ll look it up and tell
+              you where you stand before you commit to anything. Either way, the repair makes the computer
+              faster.</div>
           </div>
+          <a class="btn btn--go" href="sms:+12522539629?&amp;body=Hi%20David%20-%20my%20laptop%20is%20a%20"
+             style="text-align:center;">Text me the make and model</a>
+          <noscript>
+            <p class="verdict__text">These buttons need JavaScript, which is switched off in your browser.
+              Text me the make and model and I&rsquo;ll tell you exactly where your machine stands.</p>
+          </noscript>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="u-label">Services</p>
+        <h2>Computer repair in New Bern &mdash; what I actually fix</h2>
+        <p>Drop it off or I&rsquo;ll come to you. Either way you get a flat price before I start, and no charge
+          if I look at it and tell you it isn&rsquo;t worth doing.</p>
+      </div>
+      <div class="fixes">
+        <div class="fix">
+          <h3>Slow laptop or desktop</h3>
+          <p>The most common job by far. Usually a mechanical hard drive, a full startup list, or an operating
+            system the machine has outgrown &mdash; often all three.</p>
+        </div>
+        <div class="fix">
+          <h3>Windows tune-ups &mdash; keep the system you have</h3>
+          <p>Not everyone wants to change systems, and plenty of machines don&rsquo;t need to. I clean out the
+            clutter, get updates current, check the hardware, and leave Windows exactly where it is.</p>
+        </div>
+        <div class="fix">
+          <h3>Won&rsquo;t start up</h3>
+          <p>Black screen, spinning forever, or stuck in a repair loop. First job is always getting your files
+            off it safely &mdash; before anything else gets tried.</p>
+        </div>
+        <div class="fix">
+          <h3>SSD and memory upgrades</h3>
+          <p>The single biggest speed change available to an older machine. I&rsquo;ll tell you honestly whether
+            yours is worth upgrading or whether you&rsquo;d be better off putting the money elsewhere.</p>
+        </div>
+        <div class="fix">
+          <h3>Files recovered and moved</h3>
+          <p>Photos, documents and email moved to a new machine, or pulled off one that stopped working. Copied
+            first, checked that they open, then handed to you.</p>
+        </div>
+        <div class="fix">
+          <h3>Junkware and pop-up cleanup</h3>
+          <p>Toolbars, fake &ldquo;your computer is infected&rdquo; warnings, and the software that came bundled
+            with something else. Removed, and I&rsquo;ll show you what let it in.</p>
+        </div>
+        <div class="fix">
+          <h3>Printers, Wi-Fi and email</h3>
+          <p>The things that stop working after an update and take an afternoon to sort out. Set up and tested
+            with you, not just installed.</p>
+        </div>
+        <div class="fix">
+          <h3>Private AI setup</h3>
+          <p>Where the hardware genuinely supports it, an assistant that runs on your own machine &mdash; no
+            account, nothing leaving the house. Where it doesn&rsquo;t, I&rsquo;ll say so.</p>
         </div>
       </div>
     </div>
@@ -591,17 +742,17 @@
       <div class="ba">
         <div class="ba__card">
           <p class="u-label">Before</p>
-          <ul class="ba__list">
+          <ul class="ba__list" role="list">
             <li>Two to four minutes from power button to usable desktop</li>
             <li>Years of trial software and update leftovers running at startup</li>
-            <li>An operating system no longer getting security updates</li>
+            <li>Windows 10 or older &mdash; no longer getting security updates from Microsoft</li>
             <li>A mechanical hard drive doing all the work</li>
             <li>Fans loud enough to hear from the next room</li>
           </ul>
         </div>
         <div class="ba__card ba__card--after">
           <p class="u-label">After</p>
-          <ul class="ba__list">
+          <ul class="ba__list" role="list">
             <li>Typically well under a minute to a working desktop</li>
             <li>A clean, current system with free security updates for years</li>
             <li>Your files, photos and bookmarks moved across and checked</li>
@@ -628,8 +779,13 @@
         </div>
         <div class="spec__row">
           <div class="spec__key">Fresh system</div>
-          <div class="spec__val">A clean install of Linux — usually Pop!_OS. It’s free, it gets security updates,
-            it runs well on hardware Windows has outgrown, and there’s no license to buy or subscription attached.</div>
+          <div class="spec__val">If your machine is better off with a fresh start, that’s usually Linux &mdash;
+            Pop!_OS. It’s free, it still gets security updates, and it runs well on hardware Windows has
+            outgrown. Day to day it works the way you expect: you click an icon, a window opens. Chrome, Gmail,
+            Facebook, your bank’s website, Zoom, Netflix, your printer, your photos, and Word and Excel files
+            all work. What doesn’t carry over is Windows-only software like QuickBooks Desktop or TurboTax.
+            Tell me what you use and I’ll check it before you commit to anything &mdash; and if you’d rather
+            keep Windows, that’s the Tune-Up.</div>
         </div>
         <div class="spec__row">
           <div class="spec__key">Hardware check</div>
@@ -668,10 +824,10 @@
       </div>
       <div class="tiers">
         <div class="tier">
-          <div class="tier__name">Tune-Up</div>
+          <h3 class="tier__name">Tune-Up</h3>
           <div class="tier__price">$79</div>
           <p class="tier__desc">Keep the system you have. Good when the machine is only a couple of years slow.</p>
-          <ul class="tier__list">
+          <ul class="tier__list" role="list">
             <li>Full backup of your files</li>
             <li>Clean out startup clutter</li>
             <li>Updates and security check</li>
@@ -679,10 +835,10 @@
           </ul>
         </div>
         <div class="tier tier--lead">
-          <div class="tier__name">Full Refresh</div>
+          <h3 class="tier__name">Full Refresh</h3>
           <div class="tier__price">$149</div>
           <p class="tier__desc">The one most people want. A clean, fast, current system with your files carried across.</p>
-          <ul class="tier__list">
+          <ul class="tier__list" role="list">
             <li>Everything in Tune-Up</li>
             <li>Fresh Linux install</li>
             <li>Files and settings moved over</li>
@@ -692,10 +848,10 @@
           </ul>
         </div>
         <div class="tier">
-          <div class="tier__name">Refresh + Parts</div>
+          <h3 class="tier__name">Refresh + Parts</h3>
           <div class="tier__price">$149 <span>+ parts at cost</span></div>
           <p class="tier__desc">When the machine needs a solid-state drive or more memory to be worth doing.</p>
-          <ul class="tier__list">
+          <ul class="tier__list" role="list">
             <li>Everything in Full Refresh</li>
             <li>SSD and memory fitted</li>
             <li>Parts billed at what I pay — receipt shown</li>
@@ -703,6 +859,8 @@
           </ul>
         </div>
       </div>
+      <p style="margin-top:1.75rem;">Not sure which one you need?
+        <a href="sms:+12522539629?&amp;body=Hi%20David%20-%20my%20computer%20">Text me what the machine is doing</a> and I&rsquo;ll tell you &mdash; that part&rsquo;s free.</p>
     </div>
   </section>
 
@@ -718,10 +876,10 @@
       <div class="tiers">
         <div class="tier">
           <span class="tier__tag tier__tag--empty" aria-hidden="true">placeholder</span>
-          <div class="tier__name">Check-In</div>
+          <h3 class="tier__name">Check-In</h3>
           <div class="tier__price">$19 <span class="per">/month</span></div>
           <p class="tier__desc">The quiet plan. I watch the machine so you don’t have to think about it.</p>
-          <ul class="tier__list">
+          <ul class="tier__list" role="list">
             <li>Monthly remote health check</li>
             <li>Security updates applied and confirmed</li>
             <li>Backup actually tested, not assumed</li>
@@ -731,24 +889,24 @@
         </div>
         <div class="tier tier--lead">
           <span class="tier__tag">Most families pick this</span>
-          <div class="tier__name">Covered</div>
+          <h3 class="tier__name">Covered</h3>
           <div class="tier__price">$39 <span class="per">/month</span></div>
           <p class="tier__desc">Ask me anything, any time something goes wrong. No per-visit bill to worry about.</p>
-          <ul class="tier__list">
+          <ul class="tier__list" role="list">
             <li>Everything in Check-In</li>
             <li>Call or text as often as you need</li>
             <li>Remote fixes, only with your say-so each time</li>
             <li>You go to the front of the queue</li>
             <li>One house call each quarter included</li>
-            <li>15% off any parts</li>
+            <li>Parts at my cost, with the receipt shown</li>
           </ul>
         </div>
         <div class="tier">
           <span class="tier__tag tier__tag--empty" aria-hidden="true">placeholder</span>
-          <div class="tier__name">Small Business</div>
+          <h3 class="tier__name">Small Business</h3>
           <div class="tier__price">$119 <span class="per">/month</span></div>
           <p class="tier__desc">For a shop or office running up to five machines.</p>
-          <ul class="tier__list">
+          <ul class="tier__list" role="list">
             <li>Everything in Covered, on every machine</li>
             <li>Up to 5 computers</li>
             <li>An on-site visit each month</li>
@@ -760,14 +918,14 @@
 
       <div class="note">
         <div class="note__title">What a plan does not cover</div>
-        <ul>
-          <li>Replacement parts. Those are billed at what I pay, with the receipt shown — 15% off on Covered
-            and Small Business.</li>
+        <ul role="list">
+          <li>Replacement parts. Those are billed at what I pay, with the receipt shown.</li>
           <li>Recovering data from a drive that has already failed. That is specialist work and I quote it
             separately.</li>
-          <li>Round-the-clock cover. I am one person, not a call center. Weekdays you will hear back the same
-            day; evenings and weekends I answer when I can. If you need someone at 3 a.m., I am honestly not
-            the right fit.</li>
+          <li>Round-the-clock cover. I am one person &mdash; which is mostly the point. You get the same person
+            every time, who already knows your machine, with no ticket number and no hold music. Weekdays you
+            will hear back the same day; evenings and weekends I answer when I can. If you genuinely need
+            someone at 3 a.m., a managed IT firm is a better fit than me.</li>
           <li>Anything I have not agreed to first. If a job falls outside your plan, I tell you what it costs
             before I start, not after.</li>
         </ul>
@@ -784,7 +942,7 @@
       <div class="honest">
         <p>Plenty of shops will tell you anything to get the machine on the bench. Here’s where the limits
           honestly are:</p>
-        <ul>
+        <ul role="list">
           <li>A refresh won’t make a 2012 laptop match a new one. It makes it pleasant to use again — that’s a
             real difference, but it’s a different claim.</li>
           <li>Most older machines have no graphics card worth using for AI, so local models answer at roughly
@@ -797,6 +955,8 @@
             for the look.</li>
         </ul>
       </div>
+      <p style="margin-top:1.5rem;">Still sounds like your machine?
+        <a href="sms:+12522539629?&amp;body=Hi%20David%20-%20my%20computer%20">Text me &mdash; (252) 253-9629</a>.</p>
     </div>
   </section>
 
@@ -806,41 +966,41 @@
         <p class="u-label">Process</p>
         <h2>How it goes</h2>
       </div>
-      <div class="steps">
-        <div class="step">
+      <ol class="steps">
+        <li class="step">
           <div class="step__body">
-            <div class="step__title">You text me what’s wrong</div>
+            <h3 class="step__title">You text me what’s wrong</h3>
             <div class="step__text">A sentence is enough. “It takes forever to start up” tells me plenty.</div>
           </div>
-        </div>
-        <div class="step">
+        </li>
+        <li class="step">
           <div class="step__body">
-            <div class="step__title">I look at the machine</div>
+            <h3 class="step__title">I look at the machine</h3>
             <div class="step__text">Drop it off or I’ll come to you locally. I check the drive, memory and battery
               and tell you what’s realistic — including if the answer is “don’t bother.”</div>
           </div>
-        </div>
-        <div class="step">
+        </li>
+        <li class="step">
           <div class="step__body">
-            <div class="step__title">You get a price before I start</div>
+            <h3 class="step__title">You get a price before I start</h3>
             <div class="step__text">Flat rate, in writing. Parts at cost with the receipt. No surprises later.</div>
           </div>
-        </div>
-        <div class="step">
+        </li>
+        <li class="step">
           <div class="step__body">
-            <div class="step__title">Backup, then the work</div>
+            <h3 class="step__title">Backup, then the work</h3>
             <div class="step__text">Your files are copied and the copy is verified before anything is erased.
               Most machines are done the same day.</div>
           </div>
-        </div>
-        <div class="step">
+        </li>
+        <li class="step">
           <div class="step__body">
-            <div class="step__title">We go through it together</div>
+            <h3 class="step__title">We go through it together</h3>
             <div class="step__text">I show you where everything is and leave you a printed page of the basics.
-              Questions afterward are free — text me.</div>
+              Questions in the first 30 days are free — text me. After that, the monthly plans cover it, and I’ll still answer quick ones.</div>
           </div>
-        </div>
-      </div>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -859,8 +1019,13 @@
         <div class="u-label">Hahn Technologies Corp</div>
         <dl>
           <div class="line">
-            <dt>Text</dt>
+            <dt>Text (fastest)</dt>
             <dd><a href="sms:+12522539629">(252) 253-9629</a></dd>
+          </div>
+          <div class="line">
+            <dt>Prefer to talk?</dt>
+            <dd><a href="tel:+12522539629">Call (252) 253-9629</a> &mdash; leave a message if I&rsquo;m under a
+              machine and I&rsquo;ll ring you back.</dd>
           </div>
           <div class="line">
             <dt>Email</dt>
@@ -868,7 +1033,7 @@
           </div>
           <div class="line">
             <dt>Serving</dt>
-            <dd>New Bern, NC and nearby</dd>
+            <dd>New Bern, Trent Woods, River Bend, Bridgeton, James City, Fairfield Harbour, Havelock, Vanceboro and Cove City &mdash; all of Craven County. A bit further out? Ask me.</dd>
           </div>
         </dl>
         <a class="btn btn--go" href="sms:+12522539629" style="text-align:center;">Send a text</a>
@@ -877,6 +1042,8 @@
   </section>
 
 </main>
+
+<a class="btn btn--go sticky-cta" href="sms:+12522539629?&amp;body=Hi%20David%20-%20my%20computer%20">Text David &mdash; (252) 253-9629</a>
 
 <footer>
   <div class="wrap">
@@ -892,8 +1059,8 @@
     var VERDICTS = {
       "4": {
         tone: "no",
-        flag: "Not on the machine itself",
-        head: "Too little memory for local AI — but still very fixable",
+        flag: "Not on the machine — but yes on the web",
+        head: "Not enough memory for local AI — and still very much worth doing",
         text: "Under 8 GB, an AI model running on your own computer would use nearly all the memory and crawl. " +
               "I won’t sell you that. What I will do is make the machine genuinely fast again and set up the free " +
               "web AI tools, which work fine on any computer with a browser."
@@ -929,7 +1096,7 @@
         head: "Don’t know? That’s the normal answer",
         text: "Almost nobody knows their memory off the top of their head. Text me the make and model — it’s on a " +
               "sticker underneath the laptop — and I’ll look it up and tell you where you stand before you commit " +
-              "to anything."
+              "to anything. Either way, the repair makes the computer faster."
       }
     };
 

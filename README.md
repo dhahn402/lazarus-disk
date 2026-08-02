@@ -8,7 +8,7 @@ clutter. Wiping it and installing Linux makes most of those machines pleasant
 to use again. This repository holds the two things needed to do that as a
 service: a safe USB-writing script, and the website that sells the work.
 
-**Live site: https://dhahn402.github.io/lazarus-disk/**
+**Live site: https://newberncomputerrepair.com**
 
 Built for Hahn Technologies Corp in New Bern, NC.
 
@@ -87,7 +87,7 @@ not affiliated with or endorsed by System76.
 ## `qr/`
 
 QR codes pointing at the live site, all verified by decoding them back to
-`https://dhahn402.github.io/lazarus-disk/`.
+`https://newberncomputerrepair.com/`.
 
 | File | Use |
 | --- | --- |
@@ -100,6 +100,6 @@ Encoded at error-correction level H, so roughly 30% of the code can be
 obscured or worn and it still resolves.
 
 **Minimum print size: 1 inch / 25 mm square.** Testing showed reliable
-decoding down to 150 px and failure at 100 px, so 1 inch at 300 DPI leaves
+decoding down to 120 px, so 1 inch at 300 DPI leaves
 real margin for bad lighting and cheap phone cameras. Always leave the white
 border — that quiet zone is part of the code, not padding.
