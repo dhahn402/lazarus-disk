@@ -75,6 +75,21 @@ Renders in light and dark themes.
 
 ---
 
+## `docs/work-order.html`
+
+A printable intake and completion form. Open it in a browser and print on
+Letter, double-sided: the front is the authorization signed at drop-off, the
+back is the completion record signed at pickup. One sheet per job, so the
+signature can never get separated from the machine details.
+
+The front captures the owner's name separately from whoever dropped the machine
+off, records its condition on arrival, asks whether the files exist anywhere
+else, and carries an initialed acknowledgment for the case where the drive is
+already failing. The back has a work log and the handback signature.
+
+Not legal advice, and nobody who wrote it is a lawyer. The limitation of
+liability is the clause worth having a North Carolina attorney read.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).

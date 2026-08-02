@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work Order — Hahn Technologies Corp</title>
+<style>
+  @page { size: letter; margin: 0.45in; }
+
+  :root {
+    --ink:    #14181A;
+    --ink-2:  #4A5254;
+    --ink-3:  #6C7476;
+    --rule:   #B9C0BD;
+    --rule-2: #DCE0DE;
+    --accent: #8A5406;
+    --warn:   #8C3A24;
+    --paper:  #FFFFFF;
+    --tint:   #F4F5F4;
+    --font-display: "Avenir Next", "Avenir", "Helvetica Neue", system-ui, sans-serif;
+    --font-body: "Charter", "Iowan Old Style", Georgia, serif;
+    --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: #E8EAE9;
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 9.5pt;
+    line-height: 1.33;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    background: var(--paper);
+    width: 7.5in;
+    margin: 0.4in auto;
+    padding: 0.28in 0.34in 0.24in;
+    box-shadow: 0 2px 18px rgba(0,0,0,0.14);
+  }
+
+  h1, h2, h3 { font-family: var(--font-display); margin: 0; line-height: 1.15; }
+
+  /* ---- masthead ---- */
+  .top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 0.4in; border-bottom: 2px solid var(--ink); padding-bottom: 6pt;
+  }
+  .top h1 { font-size: 14.5pt; letter-spacing: -0.01em; font-weight: 600; }
+  .top .sub {
+    font-family: var(--font-mono); font-size: 7.5pt; letter-spacing: 0.09em;
+    text-transform: uppercase; color: var(--ink-3); margin-top: 3pt;
+  }
+  .top .who { text-align: right; font-size: 9pt; line-height: 1.4; }
+  .top .who strong { font-family: var(--font-display); font-size: 10pt; }
+
+  .ticket {
+    font-family: var(--font-mono); font-size: 8pt; letter-spacing: 0.06em;
+    color: var(--ink-3); margin-top: 4pt;
+  }
+
+  /* ---- section headers ---- */
+  .sec {
+    font-family: var(--font-mono); font-size: 7.5pt; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--ink-3);
+    border-bottom: 1px solid var(--rule); padding-bottom: 3pt;
+    margin: 7pt 0 5pt;
+  }
+  .sec:first-of-type { margin-top: 6pt; }
+
+  /* ---- fill-in lines ---- */
+  .row { display: flex; gap: 0.22in; margin-bottom: 6pt; }
+  .f { flex: 1; }
+  .f label {
+    display: block; font-family: var(--font-mono); font-size: 7pt;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3);
+    margin-bottom: 7pt;
+  }
+  .line { border-bottom: 1px solid var(--ink); height: 0; }
+  .line--tall { margin-top: 16pt; }
+
+  /* ---- the acknowledgment block ---- */
+  .ack {
+    border: 1.5pt solid var(--warn);
+    padding: 6pt 9pt;
+    margin: 6pt 0;
+    background: var(--tint);
+  }
+  .ack h3 { font-size: 9.5pt; color: var(--warn); margin-bottom: 3pt; }
+  .ack p { margin: 0 0 4pt; font-size: 8.8pt; }
+
+  .check { display: flex; gap: 6pt; align-items: flex-start; margin-top: 5pt; }
+  .inline-checks { display: flex; flex-wrap: wrap; gap: 5pt 16pt; font-size: 8.8pt; }
+  .ic { display: inline-flex; align-items: center; gap: 5pt; }
+  .ic .box { margin-top: 0; }
+  .box {
+    width: 12pt; height: 12pt; border: 1.2pt solid var(--ink);
+    flex: none; margin-top: 1pt;
+  }
+  .check p { margin: 0; font-size: 8.8pt; }
+
+  .initial {
+    font-family: var(--font-mono); font-size: 7pt; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-3);
+    white-space: nowrap; margin-left: auto; padding-left: 12pt;
+  }
+  .initial span {
+    display: inline-block; width: 46pt; border-bottom: 1px solid var(--ink);
+    margin-left: 4pt;
+  }
+
+  /* ---- terms ---- */
+  .terms { font-size: 8pt; line-height: 1.34; color: var(--ink-2); }
+  .terms ol {
+    margin: 0; padding-left: 13pt;
+    columns: 2; column-gap: 0.28in; column-rule: 1px solid var(--rule-2);
+  }
+  .terms li { margin-bottom: 2.4pt; break-inside: avoid; }
+  .terms strong { color: var(--ink); }
+
+  /* ---- signature ---- */
+  .sign { display: flex; gap: 0.26in; margin-top: 7pt; break-inside: avoid; }
+  .sign .f label { margin-bottom: 14pt; }
+
+  .foot {
+    margin-top: 8pt; padding-top: 5pt; border-top: 1px solid var(--rule-2);
+    font-size: 8pt; color: var(--ink-3);
+    display: flex; justify-content: space-between; gap: 0.2in;
+  }
+
+  .note-inline { font-size: 8.5pt; color: var(--ink-3); font-style: italic; }
+
+  /* the back side starts its own sheet */
+  .backside { break-before: page; padding-top: 2pt; }
+  .top--back { margin-bottom: 2pt; }
+  .top--back h1 { font-size: 13pt; }
+
+  /* ruled space for the technician's notes */
+  .ruled { display: flex; flex-direction: column; gap: 21pt; margin: 14pt 0 6pt; }
+  .ruled > div { border-bottom: 1px solid var(--rule); height: 0; }
+
+  @media print {
+    body { background: #fff; }
+    .backside { margin-top: 0; }
+    .sheet { box-shadow: none; margin: 0; width: auto; padding: 0; }
+    .screen-only { display: none !important; }
+  }
+
+  .screen-only {
+    max-width: 7.5in; margin: 0.4in auto 0; padding: 0 0.1in;
+    font-size: 9.5pt; color: #40484A;
+  }
+  .screen-only strong { color: #14181A; }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <div class="top">
+    <div>
+      <h1>Computer Work Order</h1>
+      <div class="sub">Authorization &amp; receipt</div>
+      <div class="ticket">Ticket No. ____________ &nbsp;&nbsp; Date in ____ / ____ / ______</div>
+    </div>
+    <div class="who">
+      <strong>Hahn Technologies Corp</strong><br>
+      New Bern, NC<br>
+      Text (252) 253-9629<br>
+      newberncomputerrepair.com
+    </div>
+  </div>
+
+  <div class="sec">1 &nbsp;·&nbsp; Who the machine belongs to</div>
+
+  <div class="row">
+    <div class="f"><label>Owner&rsquo;s name</label><div class="line"></div></div>
+    <div class="f"><label>Phone / text</label><div class="line"></div></div>
+  </div>
+  <div class="row">
+    <div class="f"><label>Dropping it off, if different</label><div class="line"></div></div>
+    <div class="f"><label>Their phone</label><div class="line"></div></div>
+  </div>
+  <div class="row">
+    <div class="f"><label>Email</label><div class="line"></div></div>
+    <div class="f"><label>Address</label><div class="line"></div></div>
+  </div>
+
+  <div class="sec">2 &nbsp;·&nbsp; The machine</div>
+
+  <div class="row">
+    <div class="f"><label>Make and model</label><div class="line"></div></div>
+    <div class="f"><label>Serial number</label><div class="line"></div></div>
+  </div>
+  <div class="row">
+    <div class="f"><label>What it&rsquo;s doing (in your words)</label><div class="line"></div></div>
+  </div>
+  <div class="row">
+    <div class="f"><label>Condition at drop-off &mdash; cracks, dead keys, charger</label><div class="line"></div></div>
+  </div>
+  <div class="row">
+    <div class="f"><label>Password or PIN, if you want it tested</label><div class="line"></div></div>
+    <div class="f"><label>Accessories left with it</label><div class="line"></div></div>
+  </div>
+
+  <div class="sec">3 &nbsp;·&nbsp; Your files</div>
+
+  <p style="margin:0 0 5pt; font-size:8.8pt;">Are the photos and documents on this machine also saved
+    somewhere else &mdash; another computer, an external drive, iCloud, Google or Dropbox?</p>
+  <div class="inline-checks">
+    <span class="ic"><span class="box"></span> Yes, there is another copy</span>
+    <span class="ic"><span class="box"></span> No &mdash; this machine is the <strong>only</strong> place they exist</span>
+    <span class="ic"><span class="box"></span> Not sure</span>
+  </div>
+
+  <div class="sec">4 &nbsp;·&nbsp; Drive health &mdash; I fill this in before I start</div>
+
+  <div class="row" style="margin-bottom:5pt;">
+    <div class="f"><label>Drive test result</label><div class="line"></div></div>
+    <div class="f"><label>Reallocated sectors / SMART status</label><div class="line"></div></div>
+  </div>
+
+  <div class="ack">
+    <h3>If the drive is showing signs of failure</h3>
+    <p>A hard drive that is already dying can stop for good while it is being copied. The copying does not cause
+      it &mdash; a drive that fragile was going to fail whichever day it chose &mdash; but it can happen on my
+      bench, and files that exist in only one place can be lost.</p>
+    <div class="check">
+      <div class="box"></div>
+      <p><strong>I have been told this drive shows signs of failure. I understand my files may be lost while
+        they are being copied, and I want the work done anyway.</strong></p>
+      <div class="initial">Initial <span></span></div>
+    </div>
+  </div>
+
+  <div class="sec">5 &nbsp;·&nbsp; The work and the price</div>
+
+  <div class="row">
+    <div class="f"><label>Work agreed</label><div class="line"></div></div>
+  </div>
+  <div class="row">
+    <div class="f"><label>Flat price quoted</label><div class="line"></div></div>
+    <div class="f"><label>Parts estimate (at cost)</label><div class="line"></div></div>
+    <div class="f"><label>Deposit taken for parts</label><div class="line"></div></div>
+  </div>
+
+  <div class="sec">6 &nbsp;·&nbsp; What we&rsquo;re both agreeing to</div>
+
+  <div class="terms">
+    <ol>
+      <li><strong>You get the price before I start.</strong> If the job needs something we did not agree on,
+        I stop and tell you what it costs first.</li>
+      <li><strong>Nothing is erased until your files are copied and I have confirmed the copy opens.</strong>
+        That is the order of operations, every time.</li>
+      <li><strong>Your backup copy lives on an encrypted drive and I erase it 14 days after you have your
+        machine back.</strong> I do not read your email, open your photos, or unlock your saved passwords.</li>
+      <li><strong>My work is guaranteed for 90 days.</strong> If something I set up stops working the way I set
+        it up, I fix it at no charge. Text me.</li>
+      <li><strong>If I damage something through my own mistake, I make it right.</strong> What I cannot take
+        on is the value of files never backed up anywhere else, or a drive that failed on its own schedule.</li>
+      <li><strong>Parts are billed at what I pay, receipt shown.</strong> Any deposit comes off the final
+        bill, and the manufacturer warranty passes to you.</li>
+      <li><strong>Payment is due when the machine is working and you are happy with it</strong> &mdash; not
+        before.</li>
+      <li><strong>Please collect the machine within 30 days of me telling you it is ready</strong> &mdash; or
+        just tell me you need longer, which is fine.</li>
+      <li><strong>If I look at it and do not think I can make it meaningfully better, I tell you and charge you
+        nothing for looking.</strong></li>
+    </ol>
+  </div>
+
+  <div class="sign">
+    <div class="f"><label>Customer signature</label><div class="line"></div></div>
+    <div class="f" style="max-width:1.5in;"><label>Date</label><div class="line"></div></div>
+    <div class="f"><label>David Hahn</label><div class="line"></div></div>
+  </div>
+
+  <div class="backside">
+
+  <div class="top top--back">
+    <div>
+      <h1>When the work is done</h1>
+      <div class="sub">Completion record &mdash; filled in at pickup</div>
+    </div>
+    <div class="who">
+      <strong>Ticket No. ______________</strong><br>
+      Owner ______________________
+    </div>
+  </div>
+
+  <div class="sec">7 &nbsp;·&nbsp; What I found and what I did</div>
+
+  <div class="ruled">
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  </div>
+
+  <div class="sec">8 &nbsp;·&nbsp; Parts, payment and handback</div>
+
+  <div class="row">
+    <div class="f" style="flex:2;"><label>Parts fitted</label><div class="line"></div></div>
+    <div class="f"><label>Parts cost</label><div class="line"></div></div>
+    <div class="f"><label>Labor</label><div class="line"></div></div>
+    <div class="f"><label>Total</label><div class="line"></div></div>
+  </div>
+  <div class="row">
+    <div class="f"><label>Paid &mdash; how and when</label><div class="line"></div></div>
+    <div class="f"><label>Old drive returned to owner</label><div class="line"></div></div>
+    <div class="f"><label>Backup copy erased on</label><div class="line"></div></div>
+  </div>
+
+  <div class="sec">9 &nbsp;·&nbsp; Handed back</div>
+
+  <div class="check">
+    <div class="box"></div>
+    <p>I have my computer back, my files are where they should be, and I have been shown how it works.
+      The 90-day guarantee on this work runs from today.</p>
+  </div>
+
+  <div class="sign">
+    <div class="f"><label>Customer signature at pickup</label><div class="line"></div></div>
+    <div class="f" style="max-width:1.5in;"><label>Date</label><div class="line"></div></div>
+    <div class="f"><label>David Hahn</label><div class="line"></div></div>
+  </div>
+
+  </div>
+
+  <div class="foot">
+    <div>Hahn Technologies Corp &middot; New Bern, NC &middot; Text (252) 253-9629</div>
+    <div>Guarantee: 90 days on work performed</div>
+  </div>
+
+</div>
+
+<div class="screen-only">
+  <p><strong>Printing:</strong> File &rarr; Print, choose Letter, and turn off &ldquo;headers and footers&rdquo; so the
+    browser does not add a URL across the top. Print two copies &mdash; one for the customer, one for your file &mdash;
+    or print one and photograph the signed page.</p>
+  <p><strong>Before you use this:</strong> it reflects what the website already promises, so the two match. It is
+    not legal advice and nobody who wrote it is a lawyer. Item 5 (the limitation of liability) is the one worth
+    having a North Carolina attorney glance at &mdash; a clause drafted too aggressively can be struck out
+    entirely, which leaves you with nothing. Bring this draft to that appointment so you are not paying someone
+    to start from a blank page.</p>
+  <p><strong>Why the owner&rsquo;s name is asked for separately in section 1:</strong> under NC law a repairer&rsquo;s
+    lien on unclaimed property is capped at $100 when you dealt with someone other than the owner. A great deal of
+    your work comes in through an adult child dropping off a parent&rsquo;s laptop, so that one extra line is worth
+    filling in.</p>
+</div>
+
+</body>
+</html>
