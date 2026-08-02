@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Computer refresh service in New Bern, NC. Old laptops made fast again, with AI tools matched honestly to what your hardware can run. Hahn Technologies Corp.">
+<title>Second Life Computers — Hahn Technologies Corp</title>
+<style>
+  :root {
+    --ground:      #EDEFEE;
+    --ground-2:    #E3E6E4;
+    --panel:       #F7F8F7;
+    --edge:        #CBD1CE;
+    --edge-soft:   #DDE2DF;
+    --text:        #1B2022;
+    --text-2:      #4C5658;
+    --text-3:      #6E797B;
+    --accent:      #A8690F;
+    --accent-lit:  #E09A2B;
+    --accent-wash: rgba(224,154,43,0.12);
+    --beige:       #B3A688;
+    --ok:          #2F7355;
+    --no:          #A2402A;
+    --shadow:      0 1px 2px rgba(20,24,26,0.05), 0 8px 24px rgba(20,24,26,0.06);
+
+    --font-display: "Avenir Next", "Avenir", "Nimbus Sans", "Helvetica Neue", system-ui, sans-serif;
+    --font-body:    "Charter", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    --font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+    --measure: 34rem;
+    --gutter: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground:      #14181A;
+      --ground-2:    #1B2023;
+      --panel:       #1D2326;
+      --edge:        #333B3E;
+      --edge-soft:   #262D30;
+      --text:        #E8EAE8;
+      --text-2:      #A9B3B3;
+      --text-3:      #7E8988;
+      --accent:      #E09A2B;
+      --accent-lit:  #F0B658;
+      --accent-wash: rgba(224,154,43,0.10);
+      --beige:       #C9BFA8;
+      --ok:          #63B48D;
+      --no:          #DE7C5F;
+      --shadow:      0 1px 2px rgba(0,0,0,0.4), 0 10px 30px rgba(0,0,0,0.3);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground:      #14181A;
+    --ground-2:    #1B2023;
+    --panel:       #1D2326;
+    --edge:        #333B3E;
+    --edge-soft:   #262D30;
+    --text:        #E8EAE8;
+    --text-2:      #A9B3B3;
+    --text-3:      #7E8988;
+    --accent:      #E09A2B;
+    --accent-lit:  #F0B658;
+    --accent-wash: rgba(224,154,43,0.10);
+    --beige:       #C9BFA8;
+    --ok:          #63B48D;
+    --no:          #DE7C5F;
+    --shadow:      0 1px 2px rgba(0,0,0,0.4), 0 10px 30px rgba(0,0,0,0.3);
+  }
+
+  :root[data-theme="light"] {
+    --ground:      #EDEFEE;
+    --ground-2:    #E3E6E4;
+    --panel:       #F7F8F7;
+    --edge:        #CBD1CE;
+    --edge-soft:   #DDE2DF;
+    --text:        #1B2022;
+    --text-2:      #4C5658;
+    --text-3:      #6E797B;
+    --accent:      #A8690F;
+    --accent-lit:  #E09A2B;
+    --accent-wash: rgba(224,154,43,0.12);
+    --beige:       #B3A688;
+    --ok:          #2F7355;
+    --no:          #A2402A;
+    --shadow:      0 1px 2px rgba(20,24,26,0.05), 0 8px 24px rgba(20,24,26,0.06);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  h1, h2, h3, .u-display {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-wrap: balance;
+    letter-spacing: -0.018em;
+    line-height: 1.12;
+    margin: 0;
+  }
+
+  .u-label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin: 0;
+  }
+
+  p { margin: 0; max-width: var(--measure); }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+  :focus-visible {
+    outline: 2px solid var(--accent-lit);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ---------- masthead ---------- */
+
+  .masthead {
+    border-bottom: 1px solid var(--edge-soft);
+    background: var(--ground);
+  }
+  .masthead__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-block: 1.15rem;
+  }
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+  .led {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent-lit);
+    box-shadow: 0 0 0 3px var(--accent-wash);
+    flex: none;
+  }
+  .masthead__meta {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-3);
+  }
+
+  /* ---------- hero ---------- */
+
+  .hero { padding-block: clamp(3rem, 8vw, 5.5rem) clamp(2.5rem, 6vw, 4rem); }
+
+  .hero__grid {
+    display: grid;
+    gap: clamp(2rem, 5vw, 3.5rem);
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  @media (min-width: 62rem) {
+    .hero__grid { grid-template-columns: 1.05fr 0.95fr; }
+  }
+
+  .hero__lede { display: flex; flex-direction: column; gap: 1.4rem; }
+
+  .hero h1 {
+    font-size: clamp(2.35rem, 6.2vw, 3.9rem);
+    letter-spacing: -0.03em;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+  .hero__sub {
+    font-size: 1.1875rem;
+    color: var(--text-2);
+    line-height: 1.6;
+  }
+
+  .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-top: 0.3rem; }
+
+  .btn {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: -0.005em;
+    padding: 0.7rem 1.35rem;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.14s ease, background 0.14s ease, border-color 0.14s ease;
+  }
+  .btn--go {
+    background: var(--accent);
+    color: var(--ground);
+    border-color: var(--accent);
+  }
+  .btn--go:hover { transform: translateY(-1px); background: var(--accent-lit); border-color: var(--accent-lit); }
+  .btn--quiet {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--edge);
+  }
+  .btn--quiet:hover { transform: translateY(-1px); border-color: var(--accent); }
+
+  /* ---------- checker ---------- */
+
+  .checker {
+    background: var(--panel);
+    border: 1px solid var(--edge);
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .checker__head {
+    padding: 1.1rem 1.35rem 0.9rem;
+    border-bottom: 1px solid var(--edge-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .checker__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.0625rem;
+  }
+  .checker__body { padding: 1.35rem; display: flex; flex-direction: column; gap: 1.1rem; }
+
+  .opts { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .opt {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    padding: 0.5rem 0.85rem;
+    border: 1px solid var(--edge);
+    border-radius: 3px;
+    background: transparent;
+    color: var(--text-2);
+    cursor: pointer;
+    transition: border-color 0.14s ease, color 0.14s ease, background 0.14s ease;
+  }
+  .opt:hover { border-color: var(--accent); color: var(--text); }
+  .opt[aria-pressed="true"] {
+    border-color: var(--accent);
+    background: var(--accent-wash);
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .verdict {
+    border-left: 2px solid var(--edge);
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-height: 7.5rem;
+  }
+  .verdict[data-tone="yes"] { border-left-color: var(--ok); }
+  .verdict[data-tone="some"] { border-left-color: var(--accent-lit); }
+  .verdict[data-tone="no"] { border-left-color: var(--no); }
+
+  .verdict__flag {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--text-3);
+  }
+  .verdict[data-tone="yes"] .verdict__flag { color: var(--ok); }
+  .verdict[data-tone="some"] .verdict__flag { color: var(--accent); }
+  .verdict[data-tone="no"] .verdict__flag { color: var(--no); }
+
+  .verdict__head { font-family: var(--font-display); font-weight: 600; font-size: 1.0625rem; }
+  .verdict__text { font-size: 0.9375rem; color: var(--text-2); line-height: 1.6; }
+
+  /* ---------- sections ---------- */
+
+  .band { padding-block: clamp(2.75rem, 6vw, 4.5rem); border-top: 1px solid var(--edge-soft); }
+  .band--sunk { background: var(--ground-2); }
+
+  .band__head { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2.25rem; }
+  .band__head h2 { font-size: clamp(1.6rem, 3.6vw, 2.15rem); }
+
+  /* spec rows */
+  .spec { display: flex; flex-direction: column; border-top: 1px solid var(--edge-soft); }
+  .spec__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.3rem 2rem;
+    padding-block: 1.05rem;
+    border-bottom: 1px solid var(--edge-soft);
+  }
+  @media (min-width: 44rem) {
+    .spec__row { grid-template-columns: 13.5rem 1fr; gap: 0 2rem; }
+  }
+  .spec__key {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    padding-top: 0.24rem;
+  }
+  .spec__val { color: var(--text-2); font-size: 0.9875rem; }
+  .spec__val strong { color: var(--text); font-weight: 600; }
+
+  /* before / after */
+  .ba { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+  @media (min-width: 46rem) { .ba { grid-template-columns: 1fr 1fr; } }
+  .ba__card {
+    border: 1px solid var(--edge);
+    border-radius: 4px;
+    padding: 1.35rem;
+    background: var(--panel);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .ba__card--after { border-color: var(--accent); }
+  .ba__list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .ba__list li {
+    font-size: 0.9375rem;
+    color: var(--text-2);
+    padding-left: 1.15rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  .ba__list li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0.62em;
+    width: 6px; height: 1px;
+    background: var(--text-3);
+  }
+  .ba__card--after .ba__list li::before { background: var(--accent); }
+
+  /* pricing */
+  .tiers { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+  @media (min-width: 50rem) { .tiers { grid-template-columns: repeat(3, 1fr); } }
+  .tier {
+    border: 1px solid var(--edge);
+    border-radius: 4px;
+    background: var(--panel);
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .tier--lead { border-color: var(--accent); box-shadow: var(--shadow); }
+  .tier__name { font-family: var(--font-display); font-weight: 600; font-size: 1.125rem; }
+  .tier__price {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+    color: var(--accent);
+  }
+  .tier__price span { font-size: 0.875rem; color: var(--text-3); font-weight: 400; letter-spacing: 0; }
+  .tier__desc { font-size: 0.9375rem; color: var(--text-2); }
+  .tier__list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .tier__list li { font-size: 0.9rem; color: var(--text-2); padding-left: 1.1rem; position: relative; line-height: 1.5; }
+  .tier__list li::before {
+    content: "";
+    position: absolute; left: 0; top: 0.58em;
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--accent-lit);
+  }
+
+  /* honesty block */
+  .honest {
+    border: 1px solid var(--edge);
+    border-left: 3px solid var(--no);
+    border-radius: 4px;
+    background: var(--panel);
+    padding: clamp(1.35rem, 3vw, 1.9rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .honest ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+  .honest li {
+    font-size: 0.9375rem; color: var(--text-2);
+    padding-left: 1.5rem; position: relative; line-height: 1.55;
+  }
+  .honest li::before {
+    content: "\00d7";
+    position: absolute; left: 0.15rem; top: -0.05em;
+    color: var(--no); font-size: 1.05rem;
+  }
+
+  /* steps — a real sequence, so numbering carries meaning */
+  .steps { display: flex; flex-direction: column; border-top: 1px solid var(--edge-soft); counter-reset: step; }
+  .step {
+    display: grid; grid-template-columns: 2.5rem 1fr;
+    gap: 0 1.25rem;
+    padding-block: 1.15rem;
+    border-bottom: 1px solid var(--edge-soft);
+    counter-increment: step;
+  }
+  .step::before {
+    content: counter(step, decimal-leading-zero);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    padding-top: 0.35rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .step__body { display: flex; flex-direction: column; gap: 0.3rem; }
+  .step__title { font-family: var(--font-display); font-weight: 600; font-size: 1rem; }
+  .step__text { font-size: 0.9375rem; color: var(--text-2); }
+
+  /* contact */
+  .contact__grid { display: grid; gap: 2rem; grid-template-columns: 1fr; align-items: start; }
+  @media (min-width: 52rem) { .contact__grid { grid-template-columns: 1.15fr 0.85fr; } }
+  .card-contact {
+    border: 1px solid var(--edge);
+    border-radius: 4px;
+    background: var(--panel);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .card-contact dl { margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .card-contact .line { display: flex; flex-direction: column; gap: 0.1rem; }
+  .card-contact dt {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem; letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--text-3);
+  }
+  .card-contact dd { margin: 0; font-size: 1.0625rem; }
+  .card-contact dd a { font-weight: 600; }
+
+  footer {
+    border-top: 1px solid var(--edge-soft);
+    padding-block: 1.75rem 2.5rem;
+    color: var(--text-3);
+    font-size: 0.8125rem;
+  }
+  footer p { max-width: none; }
+
+  /* load motion */
+  .rise { opacity: 0; transform: translateY(10px); animation: rise 0.55s cubic-bezier(0.2,0.7,0.3,1) forwards; }
+  .rise:nth-child(1) { animation-delay: 0.04s; }
+  .rise:nth-child(2) { animation-delay: 0.11s; }
+  .rise:nth-child(3) { animation-delay: 0.18s; }
+  .rise:nth-child(4) { animation-delay: 0.25s; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rise { animation: none; opacity: 1; transform: none; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <div class="wordmark"><span class="led"></span>Hahn Technologies Corp</div>
+    <div class="masthead__meta">New Bern, NC &middot; House calls &amp; drop-off</div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div class="hero__lede">
+        <p class="u-label rise">Computer refresh service</p>
+        <h1 class="rise">That slow old laptop probably isn’t <em>dead</em>. It’s just full.</h1>
+        <p class="hero__sub rise">I take computers people have given up on — the ones that take four minutes to
+          open a browser — and turn them back into machines that feel quick. Then I set up the AI tools
+          your hardware can genuinely handle, and I tell you plainly when it can’t handle much.</p>
+        <div class="cta-row rise">
+          <a class="btn btn--go" href="sms:+12522539629">Text me about your computer</a>
+          <a class="btn btn--quiet" href="#pricing">See what it costs</a>
+        </div>
+      </div>
+
+      <div class="checker rise">
+        <div class="checker__head">
+          <p class="u-label">Straight answer, before you pay anything</p>
+          <div class="checker__title">Can your computer actually run AI?</div>
+        </div>
+        <div class="checker__body">
+          <p class="u-label" id="ram-label">How much memory (RAM) does it have?</p>
+          <div class="opts" role="group" aria-labelledby="ram-label">
+            <button class="opt" type="button" data-ram="4" aria-pressed="false">4 GB or less</button>
+            <button class="opt" type="button" data-ram="8" aria-pressed="true">8 GB</button>
+            <button class="opt" type="button" data-ram="16" aria-pressed="false">16 GB</button>
+            <button class="opt" type="button" data-ram="32" aria-pressed="false">32 GB+</button>
+            <button class="opt" type="button" data-ram="0" aria-pressed="false">No idea</button>
+          </div>
+          <div class="verdict" id="verdict" data-tone="some" aria-live="polite">
+            <div class="verdict__flag" id="v-flag">Yes, within limits</div>
+            <div class="verdict__head" id="v-head">Small AI models, running privately on your machine</div>
+            <div class="verdict__text" id="v-text">8 GB comfortably runs a 3-billion-parameter assistant offline —
+              good for drafting emails, summarizing documents and answering questions. It thinks at roughly reading
+              speed rather than instantly, because it uses your processor, not a graphics card. For anything heavier,
+              I’ll set you up with the free web tools instead.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--sunk">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="u-label">The honest version</p>
+        <h2>What actually changes</h2>
+        <p>No exaggerated numbers here. This is what a refresh realistically does, and I measure your machine
+          before and after so you can see it yourself.</p>
+      </div>
+      <div class="ba">
+        <div class="ba__card">
+          <p class="u-label">Before</p>
+          <ul class="ba__list">
+            <li>Two to four minutes from power button to usable desktop</li>
+            <li>Years of trial software and update leftovers running at startup</li>
+            <li>An operating system no longer getting security updates</li>
+            <li>A mechanical hard drive doing all the work</li>
+            <li>Fans loud enough to hear from the next room</li>
+          </ul>
+        </div>
+        <div class="ba__card ba__card--after">
+          <p class="u-label">After</p>
+          <ul class="ba__list">
+            <li>Typically well under a minute to a working desktop</li>
+            <li>A clean, current system with free security updates for years</li>
+            <li>Your files, photos and bookmarks moved across and checked</li>
+            <li>Browser, email, printer and Wi-Fi set up and tested</li>
+            <li>AI tools matched to what the hardware can honestly run</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="u-label">Scope of work</p>
+        <h2>What you’re paying for</h2>
+      </div>
+      <div class="spec">
+        <div class="spec__row">
+          <div class="spec__key">Backup first</div>
+          <div class="spec__val"><strong>Nothing is erased until your files are copied and I’ve confirmed the copy
+            opens.</strong> Photos, documents, browser bookmarks and saved passwords. This step happens before
+            anything else, every time.</div>
+        </div>
+        <div class="spec__row">
+          <div class="spec__key">Fresh system</div>
+          <div class="spec__val">A clean install of Linux — usually Pop!_OS. It’s free, it gets security updates,
+            it runs well on hardware Windows has outgrown, and there’s no license to buy or subscription attached.</div>
+        </div>
+        <div class="spec__row">
+          <div class="spec__key">Hardware check</div>
+          <div class="spec__val">I test the drive, memory and battery and tell you what I find. If a part is
+            failing, you’ll hear it before I do any work — not after.</div>
+        </div>
+        <div class="spec__row">
+          <div class="spec__key">Everyday software</div>
+          <div class="spec__val">Browser, email, word processor and spreadsheet, photo viewer, video calls,
+            printer and Wi-Fi. All configured and tested with you, not just installed.</div>
+        </div>
+        <div class="spec__row">
+          <div class="spec__key">AI setup</div>
+          <div class="spec__val">Where the hardware supports it, a private assistant that runs on your own
+            machine with no account and no data leaving the house. Where it doesn’t, I set up the free web
+            tools and show you how to use them.</div>
+        </div>
+        <div class="spec__row">
+          <div class="spec__key">Shown, not just handed back</div>
+          <div class="spec__val">I sit with you and walk through it — where your files went, how to update,
+            how to use the AI. Plus a printed page of the basics to keep near the machine.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--sunk" id="pricing">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="u-label">Pricing</p>
+        <h2>Flat rates, quoted before I start</h2>
+        <p>You get the price in writing before any work begins. If I look at your machine and don’t think I can
+          make it meaningfully better, I’ll tell you and there’s no charge for looking.</p>
+      </div>
+      <div class="tiers">
+        <div class="tier">
+          <div class="tier__name">Tune-Up</div>
+          <div class="tier__price">$79</div>
+          <p class="tier__desc">Keep the system you have. Good when the machine is only a couple of years slow.</p>
+          <ul class="tier__list">
+            <li>Full backup of your files</li>
+            <li>Clean out startup clutter</li>
+            <li>Updates and security check</li>
+            <li>Hardware health report</li>
+          </ul>
+        </div>
+        <div class="tier tier--lead">
+          <div class="tier__name">Full Refresh</div>
+          <div class="tier__price">$149</div>
+          <p class="tier__desc">The one most people want. A clean, fast, current system with your files carried across.</p>
+          <ul class="tier__list">
+            <li>Everything in Tune-Up</li>
+            <li>Fresh Linux install</li>
+            <li>Files and settings moved over</li>
+            <li>All everyday software set up</li>
+            <li>Private AI assistant where the hardware allows</li>
+            <li>Sit-down walkthrough and printed guide</li>
+          </ul>
+        </div>
+        <div class="tier">
+          <div class="tier__name">Refresh + Parts</div>
+          <div class="tier__price">$149 <span>+ parts at cost</span></div>
+          <p class="tier__desc">When the machine needs a solid-state drive or more memory to be worth doing.</p>
+          <ul class="tier__list">
+            <li>Everything in Full Refresh</li>
+            <li>SSD and memory fitted</li>
+            <li>Parts billed at what I pay — receipt shown</li>
+            <li>Old drive returned to you</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="u-label">Setting expectations</p>
+        <h2>What I won’t promise you</h2>
+      </div>
+      <div class="honest">
+        <p>Plenty of shops will tell you anything to get the machine on the bench. Here’s where the limits
+          honestly are:</p>
+        <ul>
+          <li>A refresh won’t make a 2012 laptop match a new one. It makes it pleasant to use again — that’s a
+            real difference, but it’s a different claim.</li>
+          <li>Most older machines have no graphics card worth using for AI, so local models answer at roughly
+            reading speed. Useful for writing and summarizing; not for generating video.</li>
+          <li>Under 8 GB of memory, running AI on the machine itself isn’t realistic. I’ll say so and set up the
+            free web tools instead — the computer still gets much faster.</li>
+          <li>Linux isn’t Windows. If you depend on one specific Windows-only program, tell me first and we’ll
+            check it works before you commit to anything.</li>
+          <li>Some machines aren’t worth the money. If yours is one of them, I’ll tell you and charge you nothing
+            for the look.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--sunk">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="u-label">Process</p>
+        <h2>How it goes</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step__body">
+            <div class="step__title">You text me what’s wrong</div>
+            <div class="step__text">A sentence is enough. “It takes forever to start up” tells me plenty.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__body">
+            <div class="step__title">I look at the machine</div>
+            <div class="step__text">Drop it off or I’ll come to you locally. I check the drive, memory and battery
+              and tell you what’s realistic — including if the answer is “don’t bother.”</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__body">
+            <div class="step__title">You get a price before I start</div>
+            <div class="step__text">Flat rate, in writing. Parts at cost with the receipt. No surprises later.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__body">
+            <div class="step__title">Backup, then the work</div>
+            <div class="step__text">Your files are copied and the copy is verified before anything is erased.
+              Most machines are done the same day.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__body">
+            <div class="step__title">We go through it together</div>
+            <div class="step__text">I show you where everything is and leave you a printed page of the basics.
+              Questions afterward are free — text me.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap contact__grid">
+      <div class="band__head" style="margin-bottom:0;">
+        <p class="u-label">Get in touch</p>
+        <h2>Tell me what it’s doing</h2>
+        <p>I work with families, retirees, students and small businesses around New Bern. If you’re helping a
+          parent or grandparent with a computer that’s become unusable, that’s most of what I do.</p>
+        <p style="margin-top:0.5rem;">Texting is the fastest way to reach me — I’d rather answer you quickly than
+          play phone tag.</p>
+      </div>
+
+      <div class="card-contact">
+        <div class="u-label">Hahn Technologies Corp</div>
+        <dl>
+          <div class="line">
+            <dt>Text</dt>
+            <dd><a href="sms:+12522539629">(252) 253-9629</a></dd>
+          </div>
+          <div class="line">
+            <dt>Email</dt>
+            <dd><a href="mailto:hahntechnologiescorp@gmail.com">hahntechnologiescorp@gmail.com</a></dd>
+          </div>
+          <div class="line">
+            <dt>Serving</dt>
+            <dd>New Bern, NC and nearby</dd>
+          </div>
+        </dl>
+        <a class="btn btn--go" href="sms:+12522539629" style="text-align:center;">Send a text</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>David Hahn &middot; Hahn Technologies Corp &middot; New Bern, NC &middot;
+      <a href="mailto:hahntechnologiescorp@gmail.com">hahntechnologiescorp@gmail.com</a></p>
+    <p style="margin-top:0.4rem;">Pop!_OS is a trademark of System76, Inc. Hahn Technologies Corp is an
+      independent service provider and is not affiliated with or endorsed by System76.</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var VERDICTS = {
+      "4": {
+        tone: "no",
+        flag: "Not on the machine itself",
+        head: "Too little memory for local AI — but still very fixable",
+        text: "Under 8 GB, an AI model running on your own computer would use nearly all the memory and crawl. " +
+              "I won’t sell you that. What I will do is make the machine genuinely fast again and set up the free " +
+              "web AI tools, which work fine on any computer with a browser."
+      },
+      "8": {
+        tone: "some",
+        flag: "Yes, within limits",
+        head: "Small AI models, running privately on your machine",
+        text: "8 GB comfortably runs a 3-billion-parameter assistant offline — good for drafting emails, " +
+              "summarizing documents and answering questions. It thinks at roughly reading speed rather than " +
+              "instantly, because it uses your processor, not a graphics card. For anything heavier, I’ll set " +
+              "you up with the free web tools instead."
+      },
+      "16": {
+        tone: "yes",
+        flag: "Yes, comfortably",
+        head: "A capable private assistant, entirely offline",
+        text: "16 GB handles 7- to 8-billion-parameter models — a real step up in how well it writes and reasons. " +
+              "Everything stays on your machine: no account, no subscription, nothing sent anywhere. Still " +
+              "processor-speed rather than instant, but genuinely useful for everyday work."
+      },
+      "32": {
+        tone: "yes",
+        flag: "Yes, properly",
+        head: "Room for the larger open models",
+        text: "32 GB or more opens up the bigger open-weight models and lets you keep several loaded at once. " +
+              "If there’s also a usable graphics card in there, answers come back quickly rather than at reading " +
+              "speed. I’ll tell you exactly what yours can take once I’ve seen it."
+      },
+      "0": {
+        tone: "some",
+        flag: "Easy to find out",
+        head: "Don’t know? That’s the normal answer",
+        text: "Almost nobody knows their memory off the top of their head. Text me the make and model — it’s on a " +
+              "sticker underneath the laptop — and I’ll look it up and tell you where you stand before you commit " +
+              "to anything."
+      }
+    };
+
+    var opts = document.querySelectorAll(".opt");
+    var box = document.getElementById("verdict");
+    var flag = document.getElementById("v-flag");
+    var head = document.getElementById("v-head");
+    var text = document.getElementById("v-text");
+
+    function pick(btn) {
+      var v = VERDICTS[btn.getAttribute("data-ram")];
+      if (!v) return;
+      for (var i = 0; i < opts.length; i++) {
+        opts[i].setAttribute("aria-pressed", opts[i] === btn ? "true" : "false");
+      }
+      box.setAttribute("data-tone", v.tone);
+      flag.textContent = v.flag;
+      head.textContent = v.head;
+      text.textContent = v.text;
+    }
+
+    for (var i = 0; i < opts.length; i++) {
+      opts[i].addEventListener("click", function (e) { pick(e.currentTarget); });
+    }
+  })();
+</script>
+</body>
+</html>
