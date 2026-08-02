@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drive Insert — Hahn Technologies Corp</title>
+<style>
+  @page { size: letter; margin: 0.45in; }
+
+  :root {
+    --ink:    #14181A;
+    --ink-2:  #454D4F;
+    --ink-3:  #6C7476;
+    --rule:   #B9C0BD;
+    --rule-2: #DCE0DE;
+    --accent: #8A5406;
+    --tint:   #F4F5F4;
+    --font-display: "Avenir Next", "Avenir", "Helvetica Neue", system-ui, sans-serif;
+    --font-body: "Charter", "Iowan Old Style", Georgia, serif;
+    --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: #E8EAE9; color: var(--ink);
+    font-family: var(--font-body); font-size: 9pt; line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+  }
+  .sheet {
+    background: #fff; width: 7.6in; margin: 0.4in auto;
+    padding: 0.3in 0.36in; box-shadow: 0 2px 18px rgba(0,0,0,0.14);
+  }
+  h1, h2, h3 { font-family: var(--font-display); margin: 0; line-height: 1.15; }
+
+  .top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 0.4in; border-bottom: 2px solid var(--ink); padding-bottom: 6pt;
+  }
+  .top h1 { font-size: 14pt; font-weight: 600; letter-spacing: -0.01em; }
+  .top .sub {
+    font-family: var(--font-mono); font-size: 7pt; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-3); margin-top: 3pt;
+  }
+  .top .who { text-align: right; font-size: 8.5pt; line-height: 1.4; }
+  .top .who strong { font-family: var(--font-display); font-size: 9.5pt; }
+
+  .sec {
+    font-family: var(--font-mono); font-size: 7pt; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--ink-3);
+    border-bottom: 1px solid var(--rule); padding-bottom: 3pt; margin: 10pt 0 6pt;
+  }
+
+  p { margin: 0 0 5pt; }
+  strong { color: var(--ink); }
+
+  /* the build stamp — filled in per unit */
+  .stamp {
+    border: 1.2pt solid var(--ink); background: var(--tint);
+    padding: 7pt 9pt; margin: 6pt 0 2pt;
+    font-family: var(--font-mono); font-size: 8pt; line-height: 1.85;
+  }
+  .stamp .fill { display: inline-block; min-width: 1.5in; border-bottom: 1px solid var(--ink); }
+  .stamp .fill--wide { min-width: 3.6in; }
+
+  .cols { columns: 2; column-gap: 0.3in; column-rule: 1px solid var(--rule-2); }
+  .cols p { orphans: 2; widows: 2; }
+
+  .offer { font-size: 8.6pt; }
+  .offer .addr {
+    font-family: var(--font-mono); font-size: 8pt; margin: 5pt 0 5pt 14pt; line-height: 1.5;
+  }
+
+  .fineprint { font-size: 8pt; color: var(--ink-2); }
+
+  .foot {
+    margin-top: 9pt; padding-top: 5pt; border-top: 1px solid var(--rule-2);
+    font-size: 7.5pt; color: var(--ink-3);
+    display: flex; justify-content: space-between; gap: 0.2in;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .sheet { box-shadow: none; margin: 0; width: auto; padding: 0; }
+    .screen-only { display: none !important; }
+  }
+  .screen-only {
+    max-width: 7.6in; margin: 0.4in auto 0; padding: 0 0.1in;
+    font-size: 9.5pt; color: #40484A; line-height: 1.5;
+  }
+  .screen-only strong { color: #14181A; }
+  .screen-only li { margin-bottom: 5pt; }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <div class="top">
+    <div>
+      <h1>About this drive</h1>
+      <div class="sub">Licenses, source code &amp; what you paid for</div>
+    </div>
+    <div class="who">
+      <strong>Hahn Technologies Corp</strong><br>
+      New Bern, NC<br>
+      Text (252) 253-9629<br>
+      newberncomputerrepair.com
+    </div>
+  </div>
+
+  <div class="sec">This unit</div>
+
+  <div class="stamp">
+    Pop!_OS &nbsp;<span class="fill" style="min-width:0.85in;"></span>&nbsp; LTS &nbsp;·&nbsp;
+    build <span class="fill" style="min-width:0.7in;"></span> &nbsp;·&nbsp;
+    <span class="fill" style="min-width:1.3in;"></span> (Intel/AMD or NVIDIA)<br>
+    SHA-256 of the image written: <span class="fill fill--wide"></span><br>
+    Written and verified on: <span class="fill" style="min-width:1.2in;"></span>
+    by <span class="fill" style="min-width:1.6in;"></span>
+  </div>
+
+  <div class="sec">What you paid for</div>
+
+  <p><strong>The operating system on this drive is free software.</strong> You can download exactly the same
+    thing, at no cost, from <strong>system76.com/pop</strong>. You are not paying for the software and we are not
+    selling it to you.</p>
+
+  <p>What you paid for is the drive itself, our time writing it, and the checking: we verify the image against
+    the publisher&rsquo;s official SHA-256 fingerprint before writing, and we read the drive back afterward to
+    confirm it stored the image correctly. A drive that looks fine but will not boot is the usual way this goes
+    wrong, and that check is what you are buying.</p>
+
+  <div class="sec">Your right to the source code</div>
+
+  <div class="offer">
+    <p>This drive contains software licensed under the <strong>GNU General Public License version 2</strong>, the
+      <strong>GNU General Public License version 3</strong>, the GNU Lesser General Public License, and other free
+      and open source licenses. A copy of every applicable license is on the drive itself, under
+      <strong>/usr/share/doc/</strong>, in a folder named for each package.</p>
+
+    <p><strong>You are entitled to the complete corresponding source code for every GPL- and LGPL-licensed
+      program on this drive.</strong></p>
+
+    <p>Hahn Technologies Corp will provide that source code on a durable physical medium to <strong>anyone</strong>
+      who asks, for <strong>three years</strong> from the date written above, and for as long as we offer support
+      for this product. We will charge no more than our actual cost of doing so &mdash; currently <strong>$25</strong>,
+      which covers the storage device and USPS shipping within the United States.</p>
+
+    <p>To request it, send a written request quoting the release, build and SHA-256 printed above, together with a
+      check or money order for $25 payable to Hahn Technologies Corp and a mailing address, to:</p>
+
+    <div class="addr">
+      GPL Source Request &mdash; Hahn Technologies Corp<br>
+      <span class="fill" style="min-width:3.2in; border-bottom:1px solid var(--ink); display:inline-block;"></span><br>
+      New Bern, NC <span class="fill" style="min-width:0.7in; border-bottom:1px solid var(--ink); display:inline-block;"></span>
+    </div>
+
+    <p>or by email to <strong>hahntechnologiescorp@gmail.com</strong> with the subject line
+      &ldquo;GPL Source Request.&rdquo;</p>
+
+    <p>You can also download the same source code free of charge from <strong>apt.pop-os.org/release/</strong>,
+      <strong>archive.ubuntu.com/ubuntu/</strong> and <strong>github.com/pop-os</strong>.</p>
+
+    <p><strong>This offer is good for anyone holding this notice</strong> &mdash; whether or not you bought this
+      drive from us.</p>
+  </div>
+
+  <div class="sec">Trademarks and warranty</div>
+
+  <div class="cols fineprint">
+    <p><strong>Pop!_OS</strong> is a trademark of System76, Inc. <strong>Ubuntu</strong> is a registered trademark
+      of Canonical Ltd. Hahn Technologies Corp is an independent business and is <strong>not affiliated with,
+      sponsored by, or endorsed by</strong> System76, Inc. or Canonical Ltd. We are not an authorized dealer or
+      reseller for either company. We name their software only to tell you truthfully what is on the drive.</p>
+    <p>The software on this drive comes from its authors <strong>with no warranty of any kind</strong>, as set out
+      in GPLv2 sections 11 and 12 and GPLv3 sections 15 and 16. Any warranty or support we offer is offered by
+      Hahn Technologies Corp alone. It does not come from System76, Canonical, or any software author, and
+      nothing we say creates an obligation for them.</p>
+    <p>Installing an operating system erases the drive you install it onto. <strong>Back up anything you care
+      about before you start.</strong> We are glad to do that part for you &mdash; text us.</p>
+    <p>Stuck? Text <strong>(252) 253-9629</strong>. We would rather help you get it booted than have you give up
+      on it.</p>
+  </div>
+
+  <div class="foot">
+    <div>Hahn Technologies Corp &middot; New Bern, NC &middot; newberncomputerrepair.com</div>
+    <div>Keep this notice &mdash; it is your source-code offer</div>
+  </div>
+
+</div>
+
+<div class="screen-only">
+  <p><strong>Print one of these for every drive you sell or give away.</strong> Letter paper, single sided. Fill in
+    the build stamp at the top by hand, or from the output of the boot-stick script.</p>
+  <p><strong>Two blanks you must fill in before printing a batch:</strong></p>
+  <ul>
+    <li>The <strong>mailing address</strong> in the source-code offer. GPLv2 requires that someone be able to
+      request the source on physical media by mail, so a real postal address or PO box is needed. I have left it
+      blank rather than invent one.</li>
+    <li>The <strong>build stamp</strong>, per unit &mdash; release, build number, channel, SHA-256, and date.</li>
+  </ul>
+  <p><strong>Why the $25 figure:</strong> the GPL lets you charge no more than your reasonable cost of physically
+    performing the source distribution. $25 covers a drive and postage. Do not raise it &mdash; overcharging for
+    source is the classic way to trigger an enforcement complaint.</p>
+  <p><strong>Sell the Intel/AMD image, not the NVIDIA one.</strong> The NVIDIA driver ships under NVIDIA&rsquo;s own
+    license. Section 1.1(d) grants the right to <em>distribute</em> it alongside a Linux kernel, but section 2.7
+    separately says you may not <em>sell</em> the software except as expressly granted &mdash; and "sell" and
+    "distribute" are listed as different acts. Nobody has resolved that tension publicly. The Intel/AMD image has
+    no such clause and Pop!_OS installs the NVIDIA driver after setup anyway, so defaulting to Intel/AMD removes
+    the only real legal question in this product. If a customer specifically needs the NVIDIA image, you must also
+    hand them a printed copy of the NVIDIA Driver License Agreement &mdash; section 1.1(d)(ii) makes your right to
+    distribute it conditional on that.</p>
+  <p><strong>Behind the counter:</strong> for each build you sell, archive the source once (using
+    <code>casper/filesystem.manifest</code> from the ISO as the package list) and keep it three years past your
+    last sale of that build, labeled with the build number and SHA-256. An offer you cannot honor is worse than no
+    offer. Keep a dated sales log so you know when each three-year clock expires.</p>
+  <p><strong>Worth ten minutes:</strong> email <strong>trademark@system76.com</strong> describing exactly what you
+    plan to do. System76 publishes no Pop!_OS trademark policy, so this either gets you written comfort or an
+    early warning. Their COSMIC policy is permissive and explicitly allows truthful referential use, which is a
+    good sign.</p>
+  <p>Not legal advice, and nobody who wrote it is a lawyer.</p>
+</div>
+
+</body>
+</html>

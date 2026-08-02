@@ -90,6 +90,28 @@ already failing. The back has a work log and the handback signature.
 Not legal advice, and nobody who wrote it is a lawyer. The limitation of
 liability is the clause worth having a North Carolina attorney read.
 
+## `docs/drive-insert.html`
+
+The printed notice that must accompany every drive sold or given away. Carries
+the GPL written offer for source code, the build stamp (release, build, channel,
+SHA-256, date), the trademark disclaimer, and a plain statement that the software
+is free and what the customer is actually paying for.
+
+Selling copies of GPL software is expressly permitted — GPLv2 §1 and GPLv3 §4
+say so directly. What is *not* permitted is conveying binaries on physical media
+for money without a source offer. GPLv2 §3(c) and GPLv3 §6(c) are noncommercial-
+only, and the network-server option in GPLv3 §6(d) applies to downloads rather
+than to a stick handed across a counter. So a written offer in Hahn Technologies
+Corp's own name, valid three years and valid to *anyone* holding the notice, is
+the applicable path. Pointing at System76's or Ubuntu's servers is not sufficient
+on its own for the GPLv2 code, which includes the Linux kernel.
+
+**Sell the Intel/AMD image.** The NVIDIA image bundles NVIDIA's proprietary
+driver, whose license grants the right to *distribute* alongside a Linux kernel
+(§1.1(d)) while separately prohibiting *sale* except as expressly granted (§2.7).
+That tension is unresolved publicly. The Intel/AMD image has no such clause, and
+Pop!_OS installs the NVIDIA driver after setup anyway.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
