@@ -67,6 +67,10 @@ machine can run AI locally. Under 8 GB of memory it says no and explains why,
 because a page that tells people the truth about their hardware is worth more
 than one that promises everything.
 
+It also carries the recurring-plan pricing — monthly maintenance and support
+tiers — alongside the one-time refresh rates, with an explicit section on what
+those plans do not cover.
+
 Renders in light and dark themes.
 
 ---

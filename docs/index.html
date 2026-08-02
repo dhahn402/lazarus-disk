@@ -413,6 +413,55 @@
     color: var(--no); font-size: 1.05rem;
   }
 
+  /* supporting note under a card grid */
+  .note {
+    margin-top: 1.5rem;
+    border: 1px solid var(--edge);
+    border-left: 3px solid var(--beige);
+    border-radius: 4px;
+    background: var(--panel);
+    padding: 1.25rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .note__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .note ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+  .note li {
+    font-size: 0.9375rem; color: var(--text-2);
+    padding-left: 1.15rem; position: relative; line-height: 1.55;
+  }
+  .note li::before {
+    content: "";
+    position: absolute; left: 0; top: 0.62em;
+    width: 6px; height: 1px; background: var(--beige);
+  }
+
+  /* recurring-plan cards reuse .tier, with a per-month price rhythm */
+  .tier__price .per { font-size: 1rem; color: var(--text-3); font-weight: 400; letter-spacing: 0; }
+  .tier__tag {
+    align-self: flex-start;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 2px;
+    padding: 0.2rem 0.45rem;
+  }
+  /* Cards without a tag reserve its slot so every card's name and price sit
+     on the same baseline — but only once the cards are side by side. Stacked
+     on a phone there is no row to align to, and the slot is just dead space. */
+  .tier__tag--empty { display: none; }
+  @media (min-width: 50rem) {
+    .tier__tag--empty { display: block; visibility: hidden; }
+  }
+
   /* steps — a real sequence, so numbering carries meaning */
   .steps { display: flex; flex-direction: column; border-top: 1px solid var(--edge-soft); counter-reset: step; }
   .step {
@@ -614,6 +663,8 @@
         <h2>Flat rates, quoted before I start</h2>
         <p>You get the price in writing before any work begins. If I look at your machine and don’t think I can
           make it meaningfully better, I’ll tell you and there’s no charge for looking.</p>
+        <p>These are one-time jobs. If you’d rather I stayed on and kept things running,
+          see the <a href="#plans">monthly plans</a>.</p>
       </div>
       <div class="tiers">
         <div class="tier">
@@ -655,7 +706,76 @@
     </div>
   </section>
 
-  <section class="band">
+  <section class="band" id="plans">
+    <div class="wrap">
+      <div class="band__head">
+        <p class="u-label">Ongoing care</p>
+        <h2>Or let me keep it running</h2>
+        <p>A refresh fixes the machine once. Most people’s trouble is what happens over the next two years —
+          updates that stop, backups nobody checks, and no one to ask when something goes strange. These plans
+          cover that. No contract, and you can cancel any month.</p>
+      </div>
+      <div class="tiers">
+        <div class="tier">
+          <span class="tier__tag tier__tag--empty" aria-hidden="true">placeholder</span>
+          <div class="tier__name">Check-In</div>
+          <div class="tier__price">$19 <span class="per">/month</span></div>
+          <p class="tier__desc">The quiet plan. I watch the machine so you don’t have to think about it.</p>
+          <ul class="tier__list">
+            <li>Monthly remote health check</li>
+            <li>Security updates applied and confirmed</li>
+            <li>Backup actually tested, not assumed</li>
+            <li>Text support, same day on weekdays</li>
+            <li>A short plain-English report each month</li>
+          </ul>
+        </div>
+        <div class="tier tier--lead">
+          <span class="tier__tag">Most families pick this</span>
+          <div class="tier__name">Covered</div>
+          <div class="tier__price">$39 <span class="per">/month</span></div>
+          <p class="tier__desc">Ask me anything, any time something goes wrong. No per-visit bill to worry about.</p>
+          <ul class="tier__list">
+            <li>Everything in Check-In</li>
+            <li>Call or text as often as you need</li>
+            <li>Remote fixes, only with your say-so each time</li>
+            <li>You go to the front of the queue</li>
+            <li>One house call each quarter included</li>
+            <li>15% off any parts</li>
+          </ul>
+        </div>
+        <div class="tier">
+          <span class="tier__tag tier__tag--empty" aria-hidden="true">placeholder</span>
+          <div class="tier__name">Small Business</div>
+          <div class="tier__price">$119 <span class="per">/month</span></div>
+          <p class="tier__desc">For a shop or office running up to five machines.</p>
+          <ul class="tier__list">
+            <li>Everything in Covered, on every machine</li>
+            <li>Up to 5 computers</li>
+            <li>An on-site visit each month</li>
+            <li>Printers, Wi-Fi and shared files included</li>
+            <li>New-hire setup at no extra charge</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note">
+        <div class="note__title">What a plan does not cover</div>
+        <ul>
+          <li>Replacement parts. Those are billed at what I pay, with the receipt shown — 15% off on Covered
+            and Small Business.</li>
+          <li>Recovering data from a drive that has already failed. That is specialist work and I quote it
+            separately.</li>
+          <li>Round-the-clock cover. I am one person, not a call center. Weekdays you will hear back the same
+            day; evenings and weekends I answer when I can. If you need someone at 3 a.m., I am honestly not
+            the right fit.</li>
+          <li>Anything I have not agreed to first. If a job falls outside your plan, I tell you what it costs
+            before I start, not after.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--sunk">
     <div class="wrap">
       <div class="band__head">
         <p class="u-label">Setting expectations</p>
@@ -680,7 +800,7 @@
     </div>
   </section>
 
-  <section class="band band--sunk">
+  <section class="band">
     <div class="wrap">
       <div class="band__head">
         <p class="u-label">Process</p>
@@ -724,7 +844,7 @@
     </div>
   </section>
 
-  <section class="band">
+  <section class="band band--sunk">
     <div class="wrap contact__grid">
       <div class="band__head" style="margin-bottom:0;">
         <p class="u-label">Get in touch</p>
