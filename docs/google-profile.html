@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Business Profile setup — Hahn Technologies Corp</title>
+<style>
+  :root {
+    --ground: #EDEFEE; --panel: #F7F8F7; --edge: #CBD1CE; --edge-soft: #DDE2DF;
+    --text: #1B2022; --text-2: #454D4F; --text-3: #626C6E;
+    --accent: #8A5406; --accent-lit: #E09A2B; --wash: rgba(224,154,43,0.10);
+    --ok: #2A6B4F; --no: #97381F;
+    --fd: "Avenir Next","Avenir","Helvetica Neue",system-ui,sans-serif;
+    --fb: "Charter","Iowan Old Style",Georgia,serif;
+    --fm: ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground:#14181A; --panel:#1D2326; --edge:#333B3E; --edge-soft:#262D30;
+      --text:#E8EAE8; --text-2:#A9B3B3; --text-3:#8A9494;
+      --accent:#E09A2B; --accent-lit:#F0B658; --wash:rgba(224,154,43,0.09);
+      --ok:#63B48D; --no:#DE7C5F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground:#14181A; --panel:#1D2326; --edge:#333B3E; --edge-soft:#262D30;
+    --text:#E8EAE8; --text-2:#A9B3B3; --text-3:#8A9494;
+    --accent:#E09A2B; --accent-lit:#F0B658; --wash:rgba(224,154,43,0.09);
+    --ok:#63B48D; --no:#DE7C5F;
+  }
+  :root[data-theme="light"] {
+    --ground:#EDEFEE; --panel:#F7F8F7; --edge:#CBD1CE; --edge-soft:#DDE2DF;
+    --text:#1B2022; --text-2:#454D4F; --text-3:#626C6E;
+    --accent:#8A5406; --accent-lit:#E09A2B; --wash:rgba(224,154,43,0.10);
+    --ok:#2A6B4F; --no:#97381F;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin:0; background:var(--ground); color:var(--text);
+    font-family:var(--fb); font-size:1rem; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap { max-width:46rem; margin:0 auto; padding:0 clamp(1.1rem,4vw,2rem); }
+  h1,h2,h3 { font-family:var(--fd); font-weight:600; margin:0; line-height:1.15; text-wrap:balance; }
+  h1 { font-size:clamp(1.7rem,4.5vw,2.3rem); letter-spacing:-0.02em; }
+  h2 { font-size:1.25rem; margin-top:0.2rem; }
+  h3 { font-size:1rem; }
+  p { margin:0; max-width:34rem; }
+  a { color:var(--accent); }
+  :focus-visible { outline:3px solid var(--text); outline-offset:3px; }
+
+  header { border-bottom:1px solid var(--edge-soft); padding-block:1.6rem 1.3rem; }
+  .eyebrow {
+    font-family:var(--fm); font-size:0.75rem; letter-spacing:0.13em;
+    text-transform:uppercase; color:var(--text-3); margin:0 0 0.5rem;
+  }
+  .step { padding-block:1.6rem; border-bottom:1px solid var(--edge-soft); }
+  .step__head { display:flex; gap:0.9rem; align-items:baseline; margin-bottom:0.8rem; }
+  .step__n {
+    font-family:var(--fm); font-size:0.8rem; color:var(--accent);
+    font-variant-numeric:tabular-nums; flex:none;
+  }
+  .note { font-size:0.9375rem; color:var(--text-2); margin-top:0.7rem; }
+
+  /* copy-paste blocks */
+  .copy {
+    background:var(--panel); border:1px solid var(--edge); border-left:3px solid var(--accent);
+    border-radius:3px; padding:0.85rem 1rem; margin-top:0.8rem;
+    font-family:var(--fb); font-size:0.95rem; line-height:1.55;
+    white-space:pre-wrap; overflow-wrap:anywhere;
+  }
+  .copy--mono { font-family:var(--fm); font-size:0.875rem; }
+  .cap {
+    font-family:var(--fm); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--text-3); margin-top:0.55rem;
+  }
+
+  table { border-collapse:collapse; width:100%; margin-top:0.8rem; font-size:0.9375rem; }
+  th,td { text-align:left; padding:0.5rem 0.7rem 0.5rem 0; border-bottom:1px solid var(--edge-soft); vertical-align:top; }
+  th { font-family:var(--fm); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-3); font-weight:400; }
+  .tbl-scroll { overflow-x:auto; }
+
+  ul { margin:0.6rem 0 0; padding-left:1.15rem; }
+  li { margin-bottom:0.4rem; font-size:0.9375rem; color:var(--text-2); }
+  li strong { color:var(--text); }
+
+  .warn {
+    border:1px solid var(--edge); border-left:3px solid var(--no);
+    background:var(--panel); border-radius:3px; padding:1rem 1.1rem; margin-top:1rem;
+  }
+  .warn h3 { color:var(--no); margin-bottom:0.4rem; }
+  .warn li::marker { color:var(--no); }
+
+  .yes { color:var(--ok); font-weight:600; }
+  .nope { color:var(--no); font-weight:600; }
+
+  footer { padding-block:1.6rem 3rem; color:var(--text-3); font-size:0.875rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Setup sheet</p>
+    <h1>Google Business Profile — Hahn Technologies Corp</h1>
+    <p style="margin-top:0.7rem; color:var(--text-2);">Everything to paste into the form, in the order Google
+      asks for it. Have this open in one tab and <strong>google.com/business</strong> in another.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">01</span><h2>Business name</h2></div>
+    <div class="copy copy--mono">Hahn Technologies Corp</div>
+    <p class="note">Exactly that &mdash; nothing added. <strong>Do not</strong> write &ldquo;Hahn Technologies
+      Corp &mdash; New Bern Computer Repair.&rdquo; Putting keywords in the name violates Google&rsquo;s naming
+      rule, competitors report it with a one-click form, and it is one of the most common causes of suspension.
+      Your category does that job instead.</p>
+    <p class="note">If you later want &ldquo;New Bern Computer Repair&rdquo; to <em>be</em> the listing name, the
+      legitimate route is to register it as an assumed business name (DBA) with the NC Secretary of State and use
+      it on your invoices, signage and cards. Then it is your real-world name and it is allowed.</p>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">02</span><h2>Categories</h2></div>
+    <div class="tbl-scroll">
+      <table>
+        <tr><th>Slot</th><th>Choose</th><th>Why</th></tr>
+        <tr><td><strong>Primary</strong></td><td>Computer repair service</td><td>The single biggest ranking factor in the map pack. This is the one that has to be right.</td></tr>
+        <tr><td>Second</td><td>Computer support and services</td><td>Covers the monthly maintenance plans.</td></tr>
+        <tr><td>Third</td><td>Computer consultant</td><td>Covers advice and setup work.</td></tr>
+      </table>
+    </div>
+    <p class="note"><span class="nope">Do not add</span> &ldquo;Electronics repair shop&rdquo; or &ldquo;Mobile
+      phone repair shop.&rdquo; They will bring TV and cracked-screen calls to the wrong brand &mdash; that work
+      belongs to Ready Tech Repairs. Fewer, accurate categories rank better than many loose ones.</p>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">03</span><h2>Address &mdash; hide it</h2></div>
+    <p>When Google asks &ldquo;Do you want to add a location customers can visit?&rdquo; answer
+      <strong>No</strong>. You are a service-area business.</p>
+    <p class="note">You still enter your real address so Google can place the pin and verify you &mdash; you just
+      do not display it. <span class="nope">Showing a home address without signage and staffed hours is a
+      suspension trigger</span>, not a grey area. Hiding it costs you nothing: proximity to the searcher still
+      works off the hidden pin.</p>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">04</span><h2>Service areas</h2></div>
+    <div class="copy copy--mono">New Bern, NC
+Trent Woods, NC
+River Bend, NC
+Bridgeton, NC
+James City, NC
+Fairfield Harbour, NC
+Havelock, NC
+Vanceboro, NC
+Cove City, NC
+Pollocksville, NC</div>
+    <p class="note">Ten is plenty. Google allows twenty, but listing a town does not make you rank in it &mdash;
+      distance from your pin to the person searching dominates. Padding the list adds nothing and makes the
+      profile look less credible.</p>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">05</span><h2>Contact details</h2></div>
+    <div class="tbl-scroll">
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Phone</td><td><strong>(252) 626-6236</strong></td></tr>
+        <tr><td>Website</td><td>https://newberncomputerrepair.com/?utm_source=gbp</td></tr>
+        <tr><td>Messaging</td><td><strong>On</strong> &mdash; routes to your phone</td></tr>
+      </table>
+    </div>
+    <p class="note">The <code>?utm_source=gbp</code> tail costs nothing and lets you see later how much traffic
+      the listing actually sent you. The site ignores it.</p>
+    <div class="warn">
+      <h3>Use 626-6236, never 253-9629</h3>
+      <p style="font-size:0.9375rem; color:var(--text-2);">253-9629 belongs to Faith &amp; Fitness / Koala Tea
+        Kratom. Two businesses sharing one phone number is one of the clearest signals Google uses to decide
+        that two listings are really one business &mdash; and to suspend the second. Keeping the lines separate
+        is what makes a clean listing for each company possible later.</p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">06</span><h2>Description</h2></div>
+    <p class="cap">Paste as-is &mdash; 728 characters, under Google&rsquo;s 750 limit</p>
+    <div class="copy">Computer repair in New Bern and Craven County. I&rsquo;m David Hahn, and I fix computers people have given up on &mdash; the ones that take four minutes to open a browser.
+
+Sometimes that&rsquo;s a tune-up where you keep Windows. Sometimes the machine is better off on a fresh system. Either way your photos, files and email come with you, and you get a flat price agreed before I start.
+
+House calls or drop-off. Backup always comes first: nothing is erased until your files are copied and I&rsquo;ve confirmed the copy opens. Flat rates from $79.
+
+If I look at your machine and don&rsquo;t think I can make it meaningfully better, I&rsquo;ll tell you and there&rsquo;s no charge for looking.
+
+One person, start to finish. Text (252) 626-6236.</div>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">07</span><h2>Services</h2></div>
+    <p>Add each as its own service with its own description. This text is searchable inside Google and almost no
+      local competitor bothers to fill it in.</p>
+
+    <p class="cap">Slow computer or laptop</p>
+    <div class="copy">The most common job. Usually a mechanical hard drive, a full startup list, or an operating system the machine has outgrown &mdash; often all three. Flat price quoted before any work starts.</div>
+
+    <p class="cap">Windows tune-up</p>
+    <div class="copy">Not everyone wants to change systems, and plenty of machines don&rsquo;t need to. Startup clutter cleared, updates brought current, hardware checked, and Windows left exactly where it is. From $79.</div>
+
+    <p class="cap">Computer won&rsquo;t start</p>
+    <div class="copy">Black screen, spinning forever, or stuck in a repair loop. First job is always getting your files off safely, before anything else is tried.</div>
+
+    <p class="cap">SSD and memory upgrade</p>
+    <div class="copy">The single biggest speed change available to an older machine. I&rsquo;ll tell you honestly whether yours is worth upgrading or whether the money is better spent elsewhere. Parts billed at cost with the receipt shown.</div>
+
+    <p class="cap">Data transfer and file recovery</p>
+    <div class="copy">Photos, documents and email moved to a new machine, or recovered from one that stopped working. Copied first, checked that they open, then handed back to you.</div>
+
+    <p class="cap">Virus and junkware cleanup</p>
+    <div class="copy">Toolbars, fake &ldquo;your computer is infected&rdquo; warnings, and software that arrived bundled with something else. Removed &mdash; and I&rsquo;ll show you what let it in.</div>
+
+    <p class="cap">Printer, Wi-Fi and email setup</p>
+    <div class="copy">The things that stop working after an update and take an afternoon to sort out. Set up and tested with you, not just installed.</div>
+
+    <p class="cap">Monthly maintenance plan</p>
+    <div class="copy">Ongoing care for people who would rather not think about it. Updates applied and confirmed, backups actually tested rather than assumed, and someone to ask when something goes strange. From $19 a month, cancel any month.</div>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">08</span><h2>Video verification &mdash; what to film</h2></div>
+    <p>Home-based businesses are usually verified by video. Record it in <strong>one continuous take</strong>,
+      no cuts, no edits. Plan on three to five minutes.</p>
+    <ul>
+      <li>Start outside with a <strong>New Bern street sign or recognizable landmark</strong>, then walk toward
+        your work area without stopping the recording</li>
+      <li>Your <strong>bench</strong>: laptops open, SSDs, RAM sticks, boot USB drives, screwdriver kit &mdash;
+        show the tools of the trade clearly</li>
+      <li>Actually <strong>do something</strong>: open a machine, plug in a drive. Proof of activity beats
+        proof of objects</li>
+      <li><strong>Proof it&rsquo;s you</strong>: mail or a utility bill with your name, and your NC Secretary of
+        State filing for Hahn Technologies Corp on screen</li>
+      <li>Say the business name and <strong>(252) 626-6236</strong> out loud</li>
+    </ul>
+    <p class="note">Expect anywhere from a few days to a few weeks. Start it before you do anything else on this
+      page &mdash; everything else can be edited later, but the clock on verification only starts once.</p>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">09</span><h2>Photos &mdash; bring 15</h2></div>
+    <ul>
+      <li><strong>Your face.</strong> Not a logo. You are competing against faceless shops and this is the single
+        most valuable photo on the profile</li>
+      <li>You at the bench, hands on a machine (2&ndash;3 shots)</li>
+      <li><strong>Before and after boot time</strong> &mdash; phone stopwatch next to the screen. Your whole
+        pitch, made visual</li>
+      <li>An SSD beside the mechanical drive it replaced</li>
+      <li>The printed guide you leave with customers</li>
+      <li>Vehicle or signage, if you have any</li>
+      <li>One recognizable New Bern exterior shot</li>
+    </ul>
+    <p class="note">Skip anything about geotagging photos &mdash; Google strips that data on upload. Any tool
+      selling you on it is selling a myth.</p>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">10</span><h2>Reviews &mdash; the rules changed</h2></div>
+    <p>Reviews matter more than everything else on this page combined. The rules got stricter and are now
+      actively enforced, so do this the clean way from the start.</p>
+
+    <div class="warn">
+      <h3>These will get the profile restricted</h3>
+      <ul>
+        <li><strong>Gating</strong> &mdash; asking how it went first and only sending the review link to happy
+          customers. Several &ldquo;reputation&rdquo; tools still do this. Do not use them.</li>
+        <li><strong>Any incentive</strong> &mdash; a discount, a free service, a raffle entry. Banned even for
+          honest positive reviews.</li>
+        <li><strong>Handing someone your phone or tablet</strong> to leave it on the spot.</li>
+        <li><strong>Friends and family who were not paying customers.</strong> Fastest way to kill a new
+          profile.</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:1rem;"><span class="yes">What works and is allowed:</span></p>
+    <ul>
+      <li>Ask <strong>verbally and unscripted</strong> at the walkthrough whether they&rsquo;d be willing to
+        share their experience</li>
+      <li><strong>Text them the review link after you&rsquo;ve left.</strong> Get it from the profile under
+        &ldquo;Ask for reviews&rdquo;</li>
+      <li>Put a <strong>review QR code on the printed guide</strong> you already leave behind &mdash; explicitly
+        permitted</li>
+      <li>Reply to every review, good and bad, within 48 hours</li>
+    </ul>
+    <p class="note"><strong>Ten reviews over 90 days beats thirty in one week.</strong> A brand-new profile that
+      suddenly collects reviews looks manufactured and gets filtered.</p>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">11</span><h2>Keep the details identical everywhere</h2></div>
+    <p>Google leans hard on your name, phone and website matching <strong>character for character</strong>
+      across every place they appear. Use this exact block on the profile, on Facebook, on Nextdoor, on Apple
+      Business Connect, on Bing Places, and anywhere else.</p>
+    <div class="copy copy--mono">Hahn Technologies Corp
+New Bern, NC 28560
+(252) 626-6236
+hahntechnologiescorp@gmail.com
+https://newberncomputerrepair.com</div>
+    <p class="note">Never improvise a variation. &ldquo;Hahn Tech&rdquo; on one site and &ldquo;Hahn
+      Technologies Corp&rdquo; on another splits the signal you are trying to build.</p>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>Hahn Technologies Corp &middot; New Bern, NC &middot; setup sheet, not customer-facing</p>
+</footer>
+
+</body>
+</html>
