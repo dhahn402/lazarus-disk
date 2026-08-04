@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get listed — Hahn Technologies Corp</title>
+<style>
+  :root {
+    --ground:#EDEFEE; --panel:#F7F8F7; --edge:#CBD1CE; --edge-soft:#DDE2DF;
+    --text:#1B2022; --text-2:#454D4F; --text-3:#626C6E;
+    --accent:#8A5406; --ok:#2A6B4F; --no:#97381F;
+    --fd:"Avenir Next","Avenir","Helvetica Neue",system-ui,sans-serif;
+    --fb:"Charter","Iowan Old Style",Georgia,serif;
+    --fm:ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --ground:#14181A; --panel:#1D2326; --edge:#333B3E; --edge-soft:#262D30;
+      --text:#E8EAE8; --text-2:#A9B3B3; --text-3:#8A9494;
+      --accent:#E09A2B; --ok:#63B48D; --no:#DE7C5F; }
+  }
+  :root[data-theme="dark"] { --ground:#14181A; --panel:#1D2326; --edge:#333B3E; --edge-soft:#262D30;
+    --text:#E8EAE8; --text-2:#A9B3B3; --text-3:#8A9494; --accent:#E09A2B; --ok:#63B48D; --no:#DE7C5F; }
+  :root[data-theme="light"] { --ground:#EDEFEE; --panel:#F7F8F7; --edge:#CBD1CE; --edge-soft:#DDE2DF;
+    --text:#1B2022; --text-2:#454D4F; --text-3:#626C6E; --accent:#8A5406; --ok:#2A6B4F; --no:#97381F; }
+
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--ground); color:var(--text);
+    font-family:var(--fb); font-size:1rem; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:46rem; margin:0 auto; padding:0 clamp(1.1rem,4vw,2rem); }
+  h1,h2,h3 { font-family:var(--fd); font-weight:600; margin:0; line-height:1.15; text-wrap:balance; }
+  h1 { font-size:clamp(1.7rem,4.5vw,2.3rem); letter-spacing:-0.02em; }
+  h2 { font-size:1.25rem; }
+  h3 { font-size:1rem; }
+  p { margin:0; max-width:34rem; }
+  a { color:var(--accent); }
+  :focus-visible { outline:3px solid var(--text); outline-offset:3px; }
+
+  header { border-bottom:1px solid var(--edge-soft); padding-block:1.6rem 1.3rem; }
+  .eyebrow { font-family:var(--fm); font-size:0.75rem; letter-spacing:0.13em;
+    text-transform:uppercase; color:var(--text-3); margin:0 0 0.5rem; }
+
+  .step { padding-block:1.5rem; border-bottom:1px solid var(--edge-soft); }
+  .step__head { display:flex; gap:0.9rem; align-items:baseline; margin-bottom:0.7rem; }
+  .step__n { font-family:var(--fm); font-size:0.8rem; color:var(--accent);
+    font-variant-numeric:tabular-nums; flex:none; }
+  .note { font-size:0.9375rem; color:var(--text-2); margin-top:0.6rem; }
+
+  .copy { background:var(--panel); border:1px solid var(--edge); border-left:3px solid var(--accent);
+    border-radius:3px; padding:0.85rem 1rem; margin-top:0.7rem;
+    font-family:var(--fm); font-size:0.875rem; line-height:1.7;
+    white-space:pre-wrap; overflow-wrap:anywhere; }
+
+  .decide { border:1px solid var(--edge); border-left:3px solid var(--accent);
+    background:var(--panel); border-radius:3px; padding:1rem 1.1rem; margin-top:1rem; }
+  .decide h3 { margin-bottom:0.4rem; }
+
+  .warn { border:1px solid var(--edge); border-left:3px solid var(--no);
+    background:var(--panel); border-radius:3px; padding:1rem 1.1rem; margin-top:1rem; }
+  .warn h3 { color:var(--no); margin-bottom:0.4rem; }
+
+  .tbl-scroll { overflow-x:auto; }
+  table { border-collapse:collapse; width:100%; margin-top:0.7rem; font-size:0.9375rem; }
+  th,td { text-align:left; padding:0.5rem 0.8rem 0.5rem 0; border-bottom:1px solid var(--edge-soft); vertical-align:top; }
+  th { font-family:var(--fm); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--text-3); font-weight:400; }
+
+  ul { margin:0.5rem 0 0; padding-left:1.15rem; }
+  li { margin-bottom:0.4rem; font-size:0.9375rem; color:var(--text-2); }
+  li strong { color:var(--text); }
+  .free { color:var(--ok); font-weight:600; }
+  .paid { color:var(--no); font-weight:600; }
+
+  footer { padding-block:1.6rem 3rem; color:var(--text-3); font-size:0.875rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Setup sheet &mdash; do this before the Google profile</p>
+    <h1>Get listed where Google can see you</h1>
+    <p style="margin-top:0.7rem; color:var(--text-2);">Google verification goes worse for a business it has no
+      independent record of. These listings are the record. None of them will bring you a customer directly
+      &mdash; that is not what they are for. They exist so that when Google asks &ldquo;is this a real
+      business,&rdquo; something other than your own website says yes.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">00</span><h2>Decide your address first</h2></div>
+    <p>Every listing below asks for one, and <strong>they all have to match</strong> &mdash; including the one
+      Google holds privately. Changing it later is the expensive mistake.</p>
+    <div class="decide">
+      <h3>Your two real options</h3>
+      <div class="tbl-scroll">
+        <table>
+          <tr><th>Option</th><th>Works for Google?</th><th>Trade-off</th></tr>
+          <tr>
+            <td><strong>Your home address</strong>, marked not-for-display wherever the site allows</td>
+            <td><span class="free">Yes</span></td>
+            <td>Simplest and fully consistent. Some directories will still show it, so assume it becomes findable.</td>
+          </tr>
+          <tr>
+            <td><strong>A rented mailbox with a street address</strong> (a UPS Store box, not a PO Box)</td>
+            <td>Risky</td>
+            <td>Keeps your home private, but Google treats mailbox addresses as virtual offices and suspends
+              listings that use them. Fine for BBB and DataAxle, <strong>not</strong> for Google.</td>
+          </tr>
+        </table>
+      </div>
+      <p class="note"><strong>A plain PO Box is not an option</strong> &mdash; Google rejects them outright.</p>
+      <p class="note"><strong>What I would do:</strong> use your home address everywhere, hidden on Google, and
+        request non-display on BBB and DataAxle. Consistency is the thing being measured, and a mismatch between
+        what Google privately holds and what the directories publish is exactly the discrepancy that gets a
+        listing flagged.</p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">01</span><h2>The block that goes everywhere</h2></div>
+    <p>Paste this <strong>character for character</strong> into every listing. Do not abbreviate, reorder or
+      improvise a variation.</p>
+    <div class="copy">Hahn Technologies Corp
+[YOUR STREET ADDRESS]
+New Bern, NC 28560
+(252) 626-6236
+hahntechnologiescorp@gmail.com
+https://newberncomputerrepair.com</div>
+    <p class="note"><strong>&ldquo;Corp&rdquo; not &ldquo;Corporation.&rdquo; &ldquo;Hahn Technologies
+      Corp&rdquo; not &ldquo;Hahn Tech.&rdquo;</strong> Matching is what is being measured. One directory saying
+      &ldquo;Hahn Tech LLC&rdquo; undoes the work of three that got it right.</p>
+    <p class="note">Use <strong>626-6236</strong>, never 253-9629. That second number belongs to Faith &amp;
+      Fitness / Koala Tea Kratom, and sharing it across two companies is how Google concludes the two listings
+      are really one business.</p>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">02</span><h2>Data Axle / InfoUSA</h2></div>
+    <p>The oldest business-data compiler in the US. Banks, mapping services and search engines buy from them, so
+      a record here propagates quietly into a lot of places at once. This is the highest-value item on the page
+      and almost nobody does it.</p>
+    <p class="note">Find their business-listing update form (search <em>&ldquo;Data Axle add or update my
+      business listing&rdquo;</em> &mdash; they have moved the page more than once, so I would rather send you to
+      the current one than a stale link). Submitting a listing is <span class="free">free</span>. Decline the
+      upsells; you want the record, not the marketing package.</p>
+    <p class="note">Allow <strong>several weeks</strong> to propagate. This is the main reason to do it first.</p>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">03</span><h2>Better Business Bureau</h2></div>
+    <p>A BBB record is an independent statement that the business exists, and it carries real weight with older
+      customers &mdash; who are most of your market.</p>
+    <div class="warn">
+      <h3>Know which part costs money</h3>
+      <p style="font-size:0.9375rem; color:var(--text-2);"><strong>A basic BBB listing is
+        <span class="free">free</span>.</strong> BBB <em>Accreditation</em> &mdash; the badge and the rating
+        &mdash; is a <span class="paid">paid annual membership</span>, commonly several hundred dollars for a
+        small business. Their sales team is persistent.</p>
+      <p style="font-size:0.9375rem; color:var(--text-2); margin-top:0.6rem;">For the purpose on this page, the
+        free listing does the job. Accreditation is a marketing decision to make later, once you know whether
+        your customers actually ask about it.</p>
+    </div>
+    <p class="note">Search for the BBB serving Eastern North Carolina and use their &ldquo;add a business&rdquo;
+      form. If a record already exists under a similar name, claim rather than duplicate.</p>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">04</span><h2>Apple Business Connect</h2></div>
+    <p><span class="free">Free</span>, roughly twenty minutes, and it feeds Apple Maps and Siri. Your customers
+      skew older and skew iPhone, and hardly any local competitor has claimed theirs.</p>
+    <p class="note">At <strong>businessconnect.apple.com</strong>. Same block as above, same categories as the
+      Google sheet.</p>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">05</span><h2>Bing Places</h2></div>
+    <p><span class="free">Free</span>, and it can import most fields from your Google profile in one step &mdash;
+      so it is easiest done <em>after</em> Google is verified, not before.</p>
+    <p class="note">Increasingly feeds AI assistants that answer &ldquo;who repairs computers near me&rdquo;
+      without showing a map at all. Cheap insurance.</p>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">06</span><h2>Facebook Page and Nextdoor</h2></div>
+    <p>Both <span class="free">free</span>, and in a town this size they are discovery channels rather than
+      formalities.</p>
+    <ul>
+      <li><strong>Nextdoor</strong> is probably your highest-return non-Google channel. Your stated customer
+        &mdash; someone helping a parent or grandparent &mdash; is exactly who is on it, and New Bern, Trent
+        Woods and Fairfield Harbour are dense with them. Recommendations there travel by word of mouth in a way
+        Google reviews do not.</li>
+      <li><strong>Facebook</strong> matters for the local buy/sell/recommend groups. Post in those as a person,
+        not as a business &mdash; group admins remove ads, and you will get further answering a question than
+        posting a flyer.</li>
+    </ul>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">07</span><h2>Then, and only then, Google</h2></div>
+    <p>Once Data Axle and BBB have had a couple of weeks to settle, work through the
+      <a href="google-profile.html">Google Business Profile sheet</a>.</p>
+    <p class="note">Order matters here. Verification tends to go better when independent records already exist,
+      and you may only get one clean attempt at the video.</p>
+  </section>
+
+  <section class="step">
+    <div class="step__head"><span class="step__n">&mdash;</span><h2>Do not buy any of this</h2></div>
+    <div class="warn">
+      <h3>Skip these</h3>
+      <ul>
+        <li><strong>&ldquo;500 directory submissions&rdquo; packages</strong> and citation subscriptions
+          (Yext and similar) &mdash; $500&ndash;1,000 a year to appear on sites nobody in New Bern will ever
+          visit. For one location in one small market, the handful above done by hand beats all of it.</li>
+        <li><strong>BBB Accreditation</strong>, for now. The free listing is what this page needs.</li>
+        <li><strong>Yelp advertising.</strong> Claim the free listing, fill it in, then ignore their sales
+          calls. At $79&ndash;149 a job the ad math never works.</li>
+        <li><strong>Anything promising to &ldquo;fix&rdquo; your citations for a monthly fee.</strong> You have
+          six listings. You can maintain six listings.</li>
+      </ul>
+    </div>
+    <p class="note">The links that actually move a local business here are not directories at all: the New Bern
+      Chamber, a church or Rotary mention, a piece in New Bern Now or the Sun Journal, sponsoring a youth team,
+      or a free workshop at the library or senior center. One local news mention outweighs fifty directory
+      entries.</p>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>Hahn Technologies Corp &middot; New Bern, NC &middot; setup sheet, not customer-facing</p>
+</footer>
+
+</body>
+</html>
