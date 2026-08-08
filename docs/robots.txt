@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Internal working pages — not for search results
+Disallow: /work-order.html
+Disallow: /drive-insert.html
+Disallow: /get-listed.html
+Disallow: /google-profile.html
+
+Sitemap: https://newberncomputerrepair.com/sitemap.xml
