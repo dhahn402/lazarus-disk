@@ -7,7 +7,7 @@
 
 This is the one thing to understand before running a batch.
 
-A counterfeit flash drive is programmed to **report** a big size — 32GB, 64GB —
+A counterfeit flash drive is programd to **report** a big size — 32GB, 64GB —
 while the real memory inside might be 4GB. Write more than the real amount and it
 either wraps around and silently destroys earlier data, or returns garbage.
 
@@ -91,14 +91,14 @@ booting each finished key before it goes in a box.
 
 ---
 
-## STEP 4 — ⚖️ The licence rule. This one is not optional.
+## STEP 4 — ⚖️ The license rule. This one is not optional.
 
 Pop!_OS is GPL software. **If you SELL a drive with it on there:**
 
 1. The **written offer insert** must ship in the box —
    `docs/drive-insert.html` in this repo. That is what makes selling it lawful.
 2. It must be the **Intel/AMD image**, NOT the NVIDIA one. **The NVIDIA image
-   contains a driver whose licence forbids sale.**
+   contains a driver whose license forbids sale.**
 
 Getting this wrong turns a $15 product into a licensing problem. Getting it right
 costs one printed slip.
