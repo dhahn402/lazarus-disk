@@ -52,9 +52,14 @@ Format it, then fill it completely and read it back:
 comes back with a large "corrupted" or "changed" count. That drive is a fake and
 so is the rest of the lot.
 
-⏱️ It is slow — filling a 32GB drive takes a while. **Run it on a sample of 3-5
-drives from the lot first.** If any one fails, the whole lot is suspect and
-nothing ships.
+⏱️ It is slow — filling a 32GB drive takes a while.
+
+🔴 **CORRECTED 27 Aug: the inventory is FIVE DRIVES, not a bulk lot.** So "sample
+the lot" does not apply — **test all five.** It costs one evening, once, and it is
+the only thing standing between a counterfeit and a customer's photos.
+
+For any future batch large enough that testing all of them is impractical, test
+5 at random. **If a single one fails, the whole lot is suspect and nothing ships.**
 
 ---
 
