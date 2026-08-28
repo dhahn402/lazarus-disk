@@ -39,8 +39,36 @@ if [ -z "$ISO" ]; then
       "$HOME/Desktop/pop disk" \
       "$HOME/Desktop" \
       "$HOME/Downloads"; do
-    ISO=$(ls -t "$spot"/*.iso 2>/dev/null | head -1)
-    [ -n "$ISO" ] && break
+    found=$(ls -t "$spot"/*.iso 2>/dev/null)
+    [ -z "$found" ] && continue
+    count=$(printf '%s\n' "$found" | wc -l | tr -d ' ')
+    if [ "$count" -eq 1 ]; then
+      ISO="$found"
+    else
+      # More than one image in the same folder. Taking the newest one here
+      # is the silent wrong-edition pick this script exists to prevent - an
+      # Intel and an NVIDIA image sit side by side and look interchangeable
+      # right up until the licence matters. Ask instead of guessing.
+      echo "  More than one .iso is in $spot:"
+      echo ""
+      i=0
+      while IFS= read -r f; do
+        i=$((i+1))
+        echo "     $i) $(basename "$f")"
+      done <<< "$found"
+      echo ""
+      read -r -p "  Which one? [1-$i] " pick
+      case "$pick" in
+        ''|*[!0-9]*) echo "  Not a number. Nothing written."; pause_exit 1 ;;
+      esac
+      if [ "$pick" -lt 1 ] || [ "$pick" -gt "$i" ]; then
+        echo "  That isn't one of the choices. Nothing written."
+        pause_exit 1
+      fi
+      ISO=$(printf '%s\n' "$found" | sed -n "${pick}p")
+      echo ""
+    fi
+    break
   done
 fi
 
@@ -60,6 +88,31 @@ fi
 echo "  Pop!_OS file : $(basename "$ISO")"
 echo "  Location     : $(dirname "$ISO")"
 echo "  Size         : $(du -h "$ISO" | cut -f1)"
+
+# ---------- which edition is this, and may it be sold? ----------
+# The NVIDIA image bundles NVIDIA's proprietary driver. That licence grants
+# the right to distribute alongside a Linux kernel while separately
+# forbidding sale, so a stick made from it cannot lawfully be sold - see
+# step 4 of PRODUCTION-TEST-PROTOCOL.md. The Intel/AMD image carries no such
+# clause, and Pop!_OS installs the NVIDIA driver after setup anyway, so
+# nothing is lost by selling the Intel one.
+chan_now=$(basename "$ISO" | sed -n 's/^pop-os_[0-9][0-9.]*_amd64_\([a-z]*\)_.*/\1/p')
+if [ "$chan_now" = "nvidia" ]; then
+  echo "  Edition      : NVIDIA  --  NOT FOR SALE"
+  echo ""
+  echo "  This one is fine for your own machine, or a stick you give away"
+  echo "  free. It may not be SOLD - NVIDIA's driver licence forbids it."
+  echo "  To make a drive you intend to sell, use the Intel/AMD image."
+  echo ""
+  read -r -p "  Type NOTFORSALE to continue with this one: " ack
+  if [ "$ack" != "NOTFORSALE" ]; then
+    echo ""
+    echo "  Stopped. Nothing written."
+    pause_exit 1
+  fi
+elif [ -n "$chan_now" ]; then
+  echo "  Edition      : $chan_now  --  may be sold, with the printed insert in the box"
+fi
 echo ""
 
 # ---------- prove the download is complete BEFORE writing ----------

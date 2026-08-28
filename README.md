@@ -112,6 +112,14 @@ driver, whose license grants the right to *distribute* alongside a Linux kernel
 That tension is unresolved publicly. The Intel/AMD image has no such clause, and
 Pop!_OS installs the NVIDIA driver after setup anyway.
 
+## `BATCH-RECORD-2026-08.md`
+
+The per-batch test record the protocol asks for: supplier and order number, the
+exact image and its checksum, an `f3` capacity result per drive, and a boot-test
+and insert checkbox per unit. Filled in as a batch is built, kept afterward. If a
+customer ever comes back, it is the difference between "here is exactly what we
+tested" and taking their word against yours.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
