@@ -26,7 +26,8 @@ every destructive step is gated and every assumption is checked.
 
 | Guard | Why it exists |
 | --- | --- |
-| Finds the ISO by location priority, not timestamp | A leftover copy in a temp folder can be newer than the one you meant to use. Sorting by time silently picks the wrong edition. |
+| Finds the ISO by location priority, and asks when a folder holds more than one | A leftover copy in a temp folder can be newer than the one you meant to use, so sorting by time silently picks the wrong edition. Where two editions sit side by side, it stops and asks rather than guessing. |
+| Refuses to quietly sell an NVIDIA image | The NVIDIA driver's license forbids selling a drive made from it. That image is labelled NOT FOR SALE and needs a typed acknowledgement before anything is written. |
 | Verifies the ISO against its own ISO9660 header | A half-finished download is still a normal-looking file. It writes "successfully" and produces a stick that will not boot. This catches it offline, with no network needed. |
 | Verifies the publisher's SHA-256 | Confirms the image is genuine, not merely complete. Pulled from `api.pop-os.org`, or from a `.sha256` file next to the ISO. Skipped quietly when offline. |
 | Lists only external physical disks of 20–64 GB | Excludes the internal drive and any large backup drive by construction, rather than by hoping the right one is picked. |
