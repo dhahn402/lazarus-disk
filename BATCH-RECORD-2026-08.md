@@ -83,7 +83,11 @@ Boot each finished drive on a **real** machine, not a VM.
 ## STEP 4 — The licence obligation, per unit
 
 - [x] Image is **Intel/AMD**, not NVIDIA — confirmed above
-- [ ] `GPL-drive-insert-PRINT-ME.pdf` printed — 5 copies, one per box
+- [ ] **Print `GPL-insert-BATCH1-prefilled-PRINT-5.pdf` × 5** (in `~/Desktop/pop disk/`).
+      Release, build, channel and the full SHA-256 are already printed on it, so
+      they are not hand-copied five times and cannot be miscopied. Only the date
+      and initials are left blank. `GPL-drive-insert-PRINT-ME.pdf` is the blank
+      master, for any batch built on a different image.
 - [ ] ⚠️ **Mailing address written on each insert.** The GPL written offer is
       only valid if someone can actually reach you at it. The printed slip has
       a blank line for it. **A drive must not ship with that line empty.**
